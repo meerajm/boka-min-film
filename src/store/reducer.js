@@ -3,7 +3,7 @@ const reducer = (state, action) => {
     case "setMovies":
       return {
         loading: false,
-        movies: action.payload,
+        movies: action.data,
         errorMessage: null,
       };
     default:

@@ -1,12 +1,6 @@
-export const initialState = {
-  loading: true,
-  movies: [],
-  errorMessage: null,
-};
-
-export const reducer = (state, action) => {
+const reducer = (state, action) => {
   switch (action.type) {
-    case "SEARCH_MOVIES_SUCCESS":
+    case "setMovies":
       return {
         loading: false,
         movies: action.payload,
@@ -16,3 +10,5 @@ export const reducer = (state, action) => {
       return state;
   }
 };
+
+export default reducer;

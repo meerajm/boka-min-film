@@ -1,9 +1,9 @@
-import React, { useEffect, useReducer } from "react";
-import { initialState, reducer } from "../../store/reducer";
+import React, { useEffect, useContext } from "react";
+import AppContext from "../../store/context";
 import Movie from "../../components/Movies";
 
 const Main = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const { state, dispatch } = useContext(AppContext);
   const MOVIE_API_URL = `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}`;
 
   useEffect(() => {
@@ -11,7 +11,7 @@ const Main = () => {
       .then((response) => response.json())
       .then((jsonResponse) => {
         dispatch({
-          type: "SEARCH_MOVIES_SUCCESS",
+          type: "setMovies",
           payload: jsonResponse.Search,
         });
       });

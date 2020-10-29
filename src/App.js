@@ -2,6 +2,7 @@ import React, { useReducer } from "react";
 import { Router } from "@reach/router";
 import Main from "./pages/Main";
 import MovieDetail from "./pages/MovieDetail";
+import BookTicket from "./pages/BookTicket";
 import AppContext from "./store/context";
 import store from "./store";
 
@@ -12,6 +13,7 @@ function App() {
       <Router>
         <Main path="main" />
         <MovieDetail path="details" />
+        <BookTicket path="tickets" />
       </Router>
     </AppContext.Provider>
   );

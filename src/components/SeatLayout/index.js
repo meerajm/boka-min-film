@@ -10,10 +10,11 @@ const SeatLayout = () => {
         <table id="seatsBlock">
           <p id="notification" />
           <tr>
-            <td colSpan="14">
+            <td colSpan="15">
               <div className="screen">SCREEN</div>
             </td>
-            <td rowSpan="20">
+
+            <td rowSpan="30">
               <div className="smallBox greenBox">Selected Seat</div>
               <br />
               <div className="smallBox redBox">Reserved Seat</div>
@@ -54,7 +55,7 @@ const SeatLayout = () => {
 
         <br />
         <button type="button" onClick="updateTextArea()">
-          Confirm Selection
+          Bekräfta valet
         </button>
       </center>
     </div>

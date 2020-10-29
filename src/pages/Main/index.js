@@ -5,15 +5,16 @@ import Movie from "../../components/Movies";
 
 const Main = () => {
   const { state, dispatch } = useContext(AppContext);
-  const MOVIE_API_URL = `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}`;
+  const baseUrl = process.env.REACT_APP_BASE_URL;
+  const MOVIE_API_URL = `${baseUrl}api/v1/movies`;
 
   useEffect(() => {
     async function fetchMovies() {
-      const response = await axios.get(`${MOVIE_API_URL}&s=children`);
+      const response = await axios.get(`${MOVIE_API_URL}`);
       const allMovies = await response.data;
       dispatch({
         type: "setMovies",
-        data: allMovies.Search,
+        data: allMovies,
       });
     }
     fetchMovies();
@@ -32,7 +33,7 @@ const Main = () => {
         {errorMessage && <span>{errorMessage}</span>}
 
         {movies &&
-          movies.map((movie) => <Movie key={movie.imdbID} movie={movie} />)}
+          movies.map((movie) => <Movie key={movie._id} movie={movie} />)}
       </div>
     </div>
   );

@@ -2,6 +2,7 @@ import React, { useEffect, useContext } from "react";
 import axios from "axios";
 import AppContext from "../../store/context";
 import Movie from "../../components/Movies";
+import "./index.css";
 
 const Main = () => {
   const { state, dispatch } = useContext(AppContext);

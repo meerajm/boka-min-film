@@ -90,3 +90,24 @@ input[type="checkbox"]:checked:before {
   background-color: Green;
   font-size: 15px;
 }
+
+.counter {
+  padding: 20px;
+  font-size: x-large;
+  font-weight: bold;
+  border-radius: 4%;
+  background-color:wheat;
+}
+
+.ticket-select{
+  align-items: center;
+}
+
+button{
+  background-color: tomato;
+  color:white;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  font-size: 30px;
+}

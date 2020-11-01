@@ -20,6 +20,12 @@
         "endOfLine": "auto"
       }
     ],
+    "jsx-a11y/no-noninteractive-element-interactions": [
+      "error",
+      {
+        "handlers": [ "onKeyPress", "onKeyUp"]
+      }
+    ],
     "no-underscore-dangle": 0,
     "react/prop-types": [0],
     "react/jsx-props-no-spreading": [0],

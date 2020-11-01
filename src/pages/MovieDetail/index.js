@@ -1,21 +1,33 @@
-import React from "react";
+import React, { useContext } from "react";
 import ReactPlayer from "react-player";
+import { useNavigate } from "@reach/router";
+import AppContext from "../../store/context";
 import "./index.css";
 
 const MovieDetails = () => {
+  const { state } = useContext(AppContext);
+  const { selectedMovie } = state;
+  const navigate = useNavigate();
+  const handleTicket = () => {
+    navigate("./tickets", { replace: true });
+  };
   return (
     <div>
       <figure className="poster">
-        <img
-          src="https://m.media-amazon.com/images/M/MV5BNThhYzE5MDUtODYyMC00ZWI3LTk0ZTgtNDgyMmYxM2UzZjBmXkEyXkFqcGdeQXVyNjE1OTQ0NjA@._V1_SX300.jpg"
-          alt="Welcome"
-        />
-        <figcaption className="movie-name">Welcome</figcaption>
-        <button type="button" className="ticket-button">
+        <img src={selectedMovie.poster} alt={selectedMovie.title} />
+        <figcaption className="movie-name">{selectedMovie.title}</figcaption>
+        <button type="button" className="ticket-button" onClick={handleTicket}>
           Biljetter
         </button>
-        <figcaption className="genre">Genre</figcaption>
-        <figcaption className="description">Description</figcaption>
+        <figcaption className="text-large-white">
+          {selectedMovie.language}
+        </figcaption>
+        <figcaption className="text-large-white">
+          {selectedMovie.genre}
+        </figcaption>
+        <figcaption className="description">
+          {selectedMovie.description}
+        </figcaption>
       </figure>
       <div className="player-wrapper">
         <ReactPlayer
@@ -26,7 +38,7 @@ const MovieDetails = () => {
           className="react-player"
           playing
           playIcon={<button type="button">&#9658;</button>}
-          light="https://m.media-amazon.com/images/M/MV5BNThhYzE5MDUtODYyMC00ZWI3LTk0ZTgtNDgyMmYxM2UzZjBmXkEyXkFqcGdeQXVyNjE1OTQ0NjA@._V1_SX300.jpg"
+          light={selectedMovie.poster}
         />
       </div>
     </div>

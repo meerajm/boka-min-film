@@ -26,9 +26,10 @@
   font-weight: bold;
   font-size: xx-large;
 }
-.genre {
+.text-large-white {
   color: white;
   font-weight: bold;
+  font-style: italic;
   font-size: large;
 }
 .description {

@@ -6,6 +6,17 @@ const reducer = (state, action) => {
         movies: action.data,
         errorMessage: null,
       };
+    case "setSelectedMovie":
+      return {
+        ...state,
+        selectedMovie: action.data,
+      };
+    case "setCinemas":
+      return {
+        loading: false,
+        cinemas: action.data,
+        errorMessage: null,
+      };
     default:
       return state;
   }

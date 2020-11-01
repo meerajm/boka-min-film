@@ -4,6 +4,7 @@ import Main from "./pages/Main";
 import MovieDetail from "./pages/MovieDetail";
 import BookTicket from "./pages/BookTicket";
 import SeatLayout from "./components/SeatLayout";
+import Payment from "./pages/Payment";
 import AppContext from "./store/context";
 import store from "./store";
 
@@ -16,6 +17,7 @@ function App() {
         <MovieDetail path="details" />
         <BookTicket path="tickets" />
         <SeatLayout path="seats" />
+        <Payment path="payment" />
       </Router>
     </AppContext.Provider>
   );

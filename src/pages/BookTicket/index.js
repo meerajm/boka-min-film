@@ -21,7 +21,18 @@ const BookTicket = () => {
   }, []);
 
   const { cinemas, errorMessage, loading } = state;
-  console.log(cinemas);
+  const filterAndDisplay = (selectedDate) => {
+    console.log(cinemas);
+    const formattedDate = selectedDate.split(" ")[0];
+    let filterData = cinemas.map((cinema) => {
+      const temp = cinema.showData.filter(
+        (data) => data.showDate === formattedDate
+      );
+      return temp;
+    });
+    filterData = filterData.filter((cinema) => cinema.length !== 0);
+    console.log(filterData);
+  };
   const days = [
     "söndag",
     "måndag",
@@ -33,17 +44,29 @@ const BookTicket = () => {
   ];
   const today = new Date();
   const allDays = [];
-  const currentDate = `${today.getDate()}/${today.getMonth()} - 
+  let currentDate = `${today.getDate()}/${
+    today.getMonth() + 1
+  }/${today.getFullYear()} - 
   i dag`;
+  if (today.getDate() < 10) {
+    currentDate = `0${currentDate}`;
+  }
   allDays.push(currentDate);
   const [selectedDate, setSelectedDate] = useState(currentDate);
   const handleChange = (event) => {
     setSelectedDate(event.target.value);
+    filterAndDisplay(event.target.value);
   };
   for (let i = 0; i < 6; i += 1) {
     const newDate = new Date(today.setDate(today.getDate() + 1));
+    let dayField = "";
+    if (newDate.getDate() < 10) {
+      dayField = `0${newDate.getDate()}`;
+    }
     allDays.push(
-      `${newDate.getDate()}/${newDate.getMonth()} - ${days[newDate.getDay()]}`
+      `${dayField}/${newDate.getMonth() + 1}/${today.getFullYear()} - ${
+        days[newDate.getDay()]
+      }`
     );
   }
   return (

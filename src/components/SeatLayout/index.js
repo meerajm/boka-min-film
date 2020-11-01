@@ -2,57 +2,97 @@ import React, { useState } from "react";
 import "./index.css";
 
 const SeatLayout = () => {
-  const [ticketCounter, setTicketCounter] = useState(0);
+  const [seatCounter, setSeatCounter] = useState(0);
   const [selectedSeat, setSelectedSeat] = useState([]);
+  const [disableSelection, setDisableSelection] = useState(false);
   const [showBookButton, setShowBookButton] = useState(false);
   const rows = [1, 2, 3, 4, 5];
   const columns = ["A", "B", "C", "D", "E"];
 
-  const handleSelect = (e) => {
-    const shouldSelect =
-      selectedSeat.length === ticketCounter
-        ? (document.getElementsByName("seat").disabled = true)
-        : setSelectedSeat([...selectedSeat, e.target.value]);
-    setShowBookButton(shouldSelect);
+  const seatReset = () => {
+    window.location.reload();
   };
+  const handleSelect = (e) => {
+    if (e.target.checked) {
+      if (selectedSeat.length < seatCounter - 1) {
+        setSelectedSeat([...selectedSeat, e.target.value]);
+      } else if (selectedSeat.length === seatCounter - 1) {
+        setDisableSelection(true);
+        setSelectedSeat([...selectedSeat, e.target.value]);
+        setShowBookButton(true);
+      }
+    } else {
+      const temp = selectedSeat.filter((seat) => seat !== e.target.value);
+      setSelectedSeat([]);
+      setSelectedSeat(temp);
+      document.getElementById(e.target.value).checked = false;
+    }
+  };
+
+  const displaySeats = () => {
+    console.log(selectedSeat);
+  };
+
+  const updateSeatSelection = () => {
+    if (selectedSeat.length > 0) {
+      if (selectedSeat.length - 1 < seatCounter) {
+        selectedSeat.forEach((seat) => {
+          document.getElementById(seat).checked = false;
+        });
+        setDisableSelection(false);
+      }
+      setSelectedSeat([]);
+      setShowBookButton(false);
+    }
+  };
+
   return (
     <>
       <div className="ticket-select">
-        <text>Please select the number of seats</text>
+        <span className="text-with-white">
+          Please select the number of seats
+        </span>
         <button
           type="button"
           onClick={() => {
-            setTicketCounter(ticketCounter - 1);
+            setSeatCounter(seatCounter - 1);
+            updateSeatSelection();
           }}
         >
           -
         </button>
-        <span className="counter">{ticketCounter}</span>
+        <span className="counter">{seatCounter}</span>
         <button
           type="button"
           onClick={() => {
-            setTicketCounter(ticketCounter + 1);
+            setSeatCounter(seatCounter + 1);
+            setDisableSelection(false);
           }}
         >
           +
         </button>
       </div>
-      {ticketCounter !== 0 && (
-        <div className="seatStructure">
+      {seatCounter !== 0 && (
+        <div>
           <center>
-            <table id="seatsBlock">
-              <p id="notification" />
+            <table className="table-margin text-with-white" id="seatsBlock">
               <tr>
                 <td colSpan="15">
                   <div className="screen">SCREEN</div>
                 </td>
 
-                <td rowSpan="30">
-                  <div className="smallBox greenBox">Selected Seat</div>
+                <td rowSpan="30" className="seat-alignment">
+                  <div className="smallBox greenBox text-with-white">
+                    Selected Seat
+                  </div>
                   <br />
-                  <div className="smallBox redBox">Reserved Seat</div>
+                  <div className="smallBox redBox text-with-white">
+                    Reserved Seat
+                  </div>
                   <br />
-                  <div className="smallBox emptyBox">Empty Seat</div>
+                  <div className="smallBox emptyBox text-with-white">
+                    Empty Seat
+                  </div>
                   <br />
                 </td>
                 <br />
@@ -74,11 +114,13 @@ const SeatLayout = () => {
                       return (
                         <td>
                           <input
-                            id="seat"
                             type="checkbox"
                             className="seats"
+                            id={`${column}${row}`}
+                            key={`${column}${row}`}
                             value={`${column}${row}`}
                             onClick={handleSelect}
+                            disabled={disableSelection}
                           />
                         </td>
                       );
@@ -90,9 +132,14 @@ const SeatLayout = () => {
 
             <br />
             {showBookButton && (
-              <button type="button" className="" onClick="bookTicket()">
-                Bekräfta valet
-              </button>
+              <div>
+                <button type="button" onClick={displaySeats}>
+                  Bekräfta valet
+                </button>
+                <button type="button" onClick={seatReset}>
+                  Reset seats
+                </button>
+              </div>
             )}
           </center>
         </div>

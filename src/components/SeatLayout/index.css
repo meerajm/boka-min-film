@@ -96,18 +96,31 @@ input[type="checkbox"]:checked:before {
   font-size: x-large;
   font-weight: bold;
   border-radius: 4%;
-  background-color:wheat;
+  background-color: wheat;
 }
 
-.ticket-select{
+.ticket-select {
   align-items: center;
 }
 
-button{
+button {
   background-color: tomato;
-  color:white;
+  color: white;
   border-radius: 12px;
-  padding: 10px;
+  padding: 5px;
   text-align: center;
-  font-size: 30px;
+  font-size: 20px;
+}
+
+.text-with-white {
+  color: white;
+}
+
+.table-margin {
+  margin-top: 2em;
+}
+
+.seat-alignment{
+  padding-left: 2em;
+  padding-top: 2em;
 }

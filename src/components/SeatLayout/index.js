@@ -59,7 +59,7 @@ const SeatLayout = () => {
             updateSeatSelection();
           }}
         >
-          -
+          <img src="minus.png" alt="-" />
         </button>
         <span className="counter">{seatCounter}</span>
         <button
@@ -69,7 +69,7 @@ const SeatLayout = () => {
             setDisableSelection(false);
           }}
         >
-          +
+          <img src="add.png" alt="+" />
         </button>
       </div>
       {seatCounter !== 0 && (

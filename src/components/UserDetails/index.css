@@ -1,0 +1,12 @@
+form {
+    background: tomato;
+    padding: 1.5em;
+    border-radius: 1em;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;  
+}

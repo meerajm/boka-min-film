@@ -2,6 +2,7 @@ const reducer = (state, action) => {
   switch (action.type) {
     case "setMovies":
       return {
+        ...state,
         loading: false,
         movies: action.data,
         errorMessage: null,
@@ -13,6 +14,7 @@ const reducer = (state, action) => {
       };
     case "setCinemas":
       return {
+        ...state,
         cinemas: action.data,
       };
     default:

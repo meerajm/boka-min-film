@@ -8,6 +8,7 @@ const BookTicket = () => {
   const { cinemas, selectedMovie } = state;
   const baseUrl = process.env.REACT_APP_BASE_URL;
   const CINEMA_API_URL = `${baseUrl}api/v1/cinemas`;
+  const [filterData, setFilterData] = useState([]);
 
   useEffect(() => {
     async function fetchTheatreData() {
@@ -17,30 +18,29 @@ const BookTicket = () => {
         type: "setCinemas",
         data: allCinemas,
       });
-      dispatch({
-        type: "setSelectedMovie",
-        data: selectedMovie,
-      });
     }
     fetchTheatreData();
   }, []);
-  const filterAndDisplay = (selectedDate) => {
+  async function filterAndDisplay(selectedDate) {
+    let temp = JSON.parse(JSON.stringify(cinemas));
     const formattedDate = selectedDate.split(" ")[0];
-    let filterData = cinemas;
-    filterData.forEach((item) => {
+    console.log(filterData);
+    temp.forEach((item) => {
       item.showData = item.showData.filter(
         (data) => data.showDate === formattedDate
       );
     });
-    filterData = filterData.filter((item) => item.showData.length !== 0);
-    filterData.forEach((item) => {
+    temp = temp.filter((item) => item.showData.length !== 0);
+    temp.forEach((item) => {
       item.showData.forEach((data) => {
-        data.time = data.time.filter((movie) => movie.movieTitle === "Welcome");
+        data.time = data.time.filter(
+          (movie) => movie.movieTitle === selectedMovie.title
+        );
       });
     });
-
-    console.log(filterData);
-  };
+    console.log(temp);
+    setFilterData(temp);
+  }
   const days = [
     "söndag",
     "måndag",
@@ -88,8 +88,11 @@ const BookTicket = () => {
         ))}
       </select>
       <div className="grid-container">
-        <div className="items">Hello</div>
-        <div className="items">Hiee</div>
+        {filterData.map((data) => (
+          <div key={data._id} className="items">
+            {data.cinemaName}
+          </div>
+        ))}
       </div>
     </div>
   );

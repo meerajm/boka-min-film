@@ -10,7 +10,7 @@ const Movie = ({ movie }) => {
       type: "setSelectedMovie",
       data: movie,
     });
-    navigate("./details", { replace: true });
+    navigate("./details");
   };
   return (
     <figure className="card">

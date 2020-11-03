@@ -9,7 +9,7 @@ const MovieDetails = () => {
   const { selectedMovie } = state;
   const navigate = useNavigate();
   const handleTicket = () => {
-    navigate("./tickets", { replace: true });
+    navigate("./tickets");
   };
   console.log(state);
   return (
@@ -34,7 +34,7 @@ const MovieDetails = () => {
         <ReactPlayer
           width="60%"
           height="60%"
-          url="https://www.youtube.com/watch?v=03-KVRmd3xo"
+          url={selectedMovie.trailer}
           controls="true"
           className="react-player"
           playing

@@ -21,6 +21,7 @@ const BookTicket = () => {
     }
     fetchTheatreData();
   }, []);
+
   async function filterAndDisplay(selectedDate) {
     let temp = JSON.parse(JSON.stringify(cinemas));
     const formattedDate = selectedDate.split(" ")[0];
@@ -41,6 +42,12 @@ const BookTicket = () => {
     console.log(temp);
     setFilterData(temp);
   }
+
+  const handleBook = (e) => {
+    console.log(e.target.id);
+    return e.target.id;
+  };
+
   const days = [
     "söndag",
     "måndag",
@@ -50,6 +57,7 @@ const BookTicket = () => {
     "fredag",
     "lördag",
   ];
+
   const today = new Date();
   const allDays = [];
   let currentDate = `${today.getDate()}/${
@@ -90,7 +98,15 @@ const BookTicket = () => {
       <div className="grid-container">
         {filterData.map((data) => (
           <div key={data._id} className="items">
-            {data.cinemaName}
+            <span className="align-left">{data.cinemaName}</span>
+            <input
+              id={data.showData._id}
+              type="button"
+              value="Book now"
+              className="book-btn"
+              onClick={handleBook}
+            />
+            <span>Hello</span>
           </div>
         ))}
       </div>

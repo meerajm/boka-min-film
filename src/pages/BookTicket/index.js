@@ -5,6 +5,7 @@ import "./index.css";
 
 const BookTicket = () => {
   const { state, dispatch } = useContext(AppContext);
+  const { cinemas, selectedMovie } = state;
   const baseUrl = process.env.REACT_APP_BASE_URL;
   const CINEMA_API_URL = `${baseUrl}api/v1/cinemas`;
 
@@ -16,21 +17,28 @@ const BookTicket = () => {
         type: "setCinemas",
         data: allCinemas,
       });
+      dispatch({
+        type: "setSelectedMovie",
+        data: selectedMovie,
+      });
     }
     fetchTheatreData();
   }, []);
-
-  const { cinemas, errorMessage, loading } = state;
   const filterAndDisplay = (selectedDate) => {
-    console.log(cinemas);
     const formattedDate = selectedDate.split(" ")[0];
-    let filterData = cinemas.map((cinema) => {
-      const temp = cinema.showData.filter(
+    let filterData = cinemas;
+    filterData.forEach((item) => {
+      item.showData = item.showData.filter(
         (data) => data.showDate === formattedDate
       );
-      return temp;
     });
-    filterData = filterData.filter((cinema) => cinema.length !== 0);
+    filterData = filterData.filter((item) => item.showData.length !== 0);
+    filterData.forEach((item) => {
+      item.showData.forEach((data) => {
+        data.time = data.time.filter((movie) => movie.movieTitle === "Welcome");
+      });
+    });
+
     console.log(filterData);
   };
   const days = [
@@ -80,8 +88,6 @@ const BookTicket = () => {
         ))}
       </select>
       <div className="grid-container">
-        {loading && <span>loading...</span>}
-        {errorMessage && <span>{errorMessage}</span>}
         <div className="items">Hello</div>
         <div className="items">Hiee</div>
       </div>

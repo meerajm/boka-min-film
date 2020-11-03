@@ -13,9 +13,7 @@ const reducer = (state, action) => {
       };
     case "setCinemas":
       return {
-        loading: false,
         cinemas: action.data,
-        errorMessage: null,
       };
     default:
       return state;

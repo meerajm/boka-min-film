@@ -6,13 +6,11 @@ const Payment = () => {
   const price = 100 * 11.23;
   const name = "BokaMinFilm";
   async function handleToken(token) {
-    const response = await axios.post(
-      "https://ry7v05l6on.sse.codesandbox.io/checkout",
-      {
-        token,
-        name,
-      }
-    );
+    const response = await axios.post("http://localhost:5000/checkout", {
+      token,
+      name,
+      price,
+    });
     const { status } = response.data;
     console.log(status);
     if (status === "success") {

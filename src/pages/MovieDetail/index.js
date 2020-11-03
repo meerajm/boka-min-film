@@ -11,6 +11,7 @@ const MovieDetails = () => {
   const handleTicket = () => {
     navigate("./tickets", { replace: true });
   };
+  console.log(state);
   return (
     <div>
       <figure className="poster">

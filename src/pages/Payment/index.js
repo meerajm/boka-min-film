@@ -1,6 +1,10 @@
 import React from "react";
 import StripeCheckout from "react-stripe-checkout";
 import axios from "axios";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+toast.configure();
 
 const Payment = () => {
   const price = 100 * 11.23;
@@ -14,9 +18,9 @@ const Payment = () => {
     const { status } = response.data;
     console.log(status);
     if (status === "success") {
-      console.log("Success");
+      toast("Payment successful", { type: "success" });
     } else {
-      console.log("Something went wrong");
+      toast("Something went wrong", { type: "error" });
     }
   }
   return (

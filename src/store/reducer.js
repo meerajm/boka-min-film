@@ -32,6 +32,11 @@ const reducer = (state, action) => {
         ...state,
         selectedDay: action.data,
       };
+    case "setUserDetails":
+      return {
+        ...state,
+        userDetails: action.data,
+      };
     default:
       return state;
   }

@@ -7,5 +7,6 @@ const state = {
   cinemaNames: [],
   selectedCinema: "",
   setSelectedDay: "",
+  userDetails: {},
 };
 export default state;

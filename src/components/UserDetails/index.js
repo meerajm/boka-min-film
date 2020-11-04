@@ -7,13 +7,13 @@ const UserDetails = () => {
   const { state, dispatch } = useContext(AppContext);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
+  const [phoneNo, setPhoneNo] = useState("");
   const navigate = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch({
       type: "setUserDetails",
-      data: { name, email, phone },
+      data: { name, email, phoneNo },
     });
     navigate("./payment");
   };
@@ -24,7 +24,7 @@ const UserDetails = () => {
     setEmail(e.target.value);
   };
   const handlePhoneNo = (e) => {
-    setPhone(e.target.value);
+    setPhoneNo(e.target.value);
   };
 
   console.log(state);
@@ -47,7 +47,7 @@ const UserDetails = () => {
         <div>
           <label>
             Phone Number:
-            <input type="text" value={phone} onChange={handlePhoneNo} />
+            <input type="text" value={phoneNo} onChange={handlePhoneNo} />
           </label>
         </div>
         <div>

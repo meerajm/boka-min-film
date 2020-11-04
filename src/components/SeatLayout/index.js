@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./index.css";
+import UserDetails from "../UserDetails";
 
 const SeatLayout = () => {
   const [seatCounter, setSeatCounter] = useState(0);
@@ -8,7 +9,7 @@ const SeatLayout = () => {
   const [showBookButton, setShowBookButton] = useState(false);
   const rows = [1, 2, 3, 4, 5];
   const columns = ["A", "B", "C", "D", "E"];
-
+  const [showUserDetails, setShowUserDetails] = useState(false);
   const seatReset = () => {
     window.location.reload();
   };
@@ -30,7 +31,7 @@ const SeatLayout = () => {
   };
 
   const displaySeats = () => {
-    console.log(selectedSeat);
+    setShowUserDetails(true);
   };
 
   const updateSeatSelection = () => {
@@ -43,6 +44,7 @@ const SeatLayout = () => {
       }
       setSelectedSeat([]);
       setShowBookButton(false);
+      setShowUserDetails(false);
     }
   };
 
@@ -55,7 +57,11 @@ const SeatLayout = () => {
         <button
           type="button"
           onClick={() => {
-            setSeatCounter(seatCounter - 1);
+            if (seatCounter === 0) {
+              setSeatCounter(0);
+            } else {
+              setSeatCounter(seatCounter - 1);
+            }
             updateSeatSelection();
           }}
         >
@@ -142,6 +148,13 @@ const SeatLayout = () => {
               </div>
             )}
           </center>
+        </div>
+      )}
+      {showUserDetails && (
+        <div>
+          <h3>You have selected the seats</h3>
+          <h3>{selectedSeat}</h3>
+          <UserDetails />
         </div>
       )}
     </>

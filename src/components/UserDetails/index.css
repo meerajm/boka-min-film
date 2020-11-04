@@ -5,7 +5,7 @@ form {
 }
 
 .center {
-    display: flex;
+    display: flexbox;
     justify-content: center;
     align-items: center;
     height:100vh;  

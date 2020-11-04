@@ -22,4 +22,5 @@
   .book-btn {
     float: right;
     width: 100px;
+    grid-column: 1;
   }

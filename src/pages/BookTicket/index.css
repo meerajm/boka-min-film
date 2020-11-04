@@ -1,25 +1,13 @@
-.grid-container {
+.select-container {
   display: grid;
-  grid-template-columns: auto auto  ;
+  grid-template-columns: auto auto;
   grid-gap: 10px;
-  background-color: tomato;
+  background-color: red;
   padding: 10px;
 }
-.grid-container > div {
-  background-color: thistle;
-  text-align: center;
-  width: 100%;
-  padding: 20px;
-  font-size: 30px;
+.select-date {
+  grid-column: 0;
 }
-.items {
+.select-cinema {
   grid-column: 1;
-}
-.align-left {
-  float: left;
-  width: 100px;
-}
-.book-btn {
-  float: right;
-  width: 100px;
 }

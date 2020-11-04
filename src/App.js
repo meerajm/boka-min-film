@@ -6,6 +6,7 @@ import BookTicket from "./pages/BookTicket";
 import SeatLayout from "./components/SeatLayout";
 import Payment from "./pages/Payment";
 import UserDetails from "./components/UserDetails";
+import MovieTiming from "./components/MovieTimings";
 import AppContext from "./store/context";
 import store from "./store";
 
@@ -20,6 +21,7 @@ function App() {
         <SeatLayout path="seats" />
         <Payment path="payment" />
         <UserDetails path="user" />
+        <MovieTiming path="confirm" />
       </Router>
     </AppContext.Provider>
   );

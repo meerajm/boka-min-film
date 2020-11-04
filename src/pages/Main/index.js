@@ -8,6 +8,7 @@ const Main = () => {
   const { state, dispatch } = useContext(AppContext);
   const baseUrl = process.env.REACT_APP_BASE_URL;
   const MOVIE_API_URL = `${baseUrl}api/v1/movies`;
+  const CINEMA_API_URL = `${baseUrl}api/v1/cinemas/all`;
 
   useEffect(() => {
     async function fetchMovies() {
@@ -19,6 +20,18 @@ const Main = () => {
       });
     }
     fetchMovies();
+  }, []);
+
+  useEffect(() => {
+    async function fetchCinemaNames() {
+      const response = await axios.get(`${CINEMA_API_URL}`);
+      const allCinemaNames = await response.data;
+      dispatch({
+        type: "setCinemaNames",
+        data: allCinemaNames,
+      });
+    }
+    fetchCinemaNames();
   }, []);
 
   const { movies, errorMessage, loading } = state;

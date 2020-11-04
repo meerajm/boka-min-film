@@ -8,9 +8,11 @@ const MovieDetails = () => {
   const { state } = useContext(AppContext);
   const { selectedMovie } = state;
   const navigate = useNavigate();
+
   const handleTicket = () => {
     navigate("./tickets");
   };
+
   console.log(state);
   return (
     <div>

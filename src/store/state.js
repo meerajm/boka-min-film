@@ -4,5 +4,8 @@ const state = {
   errorMessage: null,
   selectedMovie: {},
   cinemas: [],
+  cinemaNames: [],
+  selectedCinema: "",
+  setSelectedDay: "",
 };
 export default state;

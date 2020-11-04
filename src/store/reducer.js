@@ -17,6 +17,21 @@ const reducer = (state, action) => {
         ...state,
         cinemas: action.data,
       };
+    case "setCinemaNames":
+      return {
+        ...state,
+        cinemaNames: action.data,
+      };
+    case "setSelectedCinema":
+      return {
+        ...state,
+        selectedCinema: action.data,
+      };
+    case "setSelectedDay":
+      return {
+        ...state,
+        selectedDay: action.data,
+      };
     default:
       return state;
   }

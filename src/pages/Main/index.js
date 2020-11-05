@@ -9,7 +9,6 @@ const Main = () => {
   const baseUrl = process.env.REACT_APP_BASE_URL;
   const MOVIE_API_URL = `${baseUrl}api/v1/movies`;
   const CINEMA_API_URL = `${baseUrl}api/v1/cinemas/all`;
-
   useEffect(() => {
     async function fetchMovies() {
       const response = await axios.get(`${MOVIE_API_URL}`);

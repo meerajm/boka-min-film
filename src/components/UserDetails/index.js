@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from "@reach/router";
+import emailjs from "emailjs-com";
 import AppContext from "../../store/context";
 import "./index.css";
 
@@ -9,8 +10,19 @@ const UserDetails = () => {
   const [email, setEmail] = useState("");
   const [phoneNo, setPhoneNo] = useState("");
   const navigate = useNavigate();
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const emailjsUserID = process.env.EMAILJS_USER_ID;
+  console.log("process", process);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    emailjs.sendForm("gmail", "template_qzheows", e.target, emailjsUserID).then(
+      (result) => {
+        console.log(result.text);
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
     dispatch({
       type: "setUserDetails",
       data: { name, email, phoneNo },

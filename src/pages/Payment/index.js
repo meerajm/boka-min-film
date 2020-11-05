@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "@reach/router";
 import StripeCheckout from "react-stripe-checkout";
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -8,6 +9,7 @@ import "./index.css";
 toast.configure();
 
 const Payment = () => {
+  const navigate = useNavigate();
   const price = 100 * 11.23;
   const name = "BokaMinFilm";
   async function handleToken(token) {
@@ -17,12 +19,14 @@ const Payment = () => {
       price,
     });
     const { status } = response.data;
-    console.log(status);
     if (status === "success") {
       toast("Payment successful", { type: "success" });
     } else {
       toast("Something went wrong", { type: "error" });
     }
+    setTimeout(() => {
+      navigate("./thank-you");
+    }, 2000);
   }
   return (
     <div className="container">

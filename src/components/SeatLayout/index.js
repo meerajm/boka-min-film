@@ -12,9 +12,20 @@ const SeatLayout = () => {
   const rows = [1, 2, 3, 4, 5];
   const columns = ["A", "B", "C", "D", "E"];
   const [showUserDetails, setShowUserDetails] = useState(false);
+
   const seatReset = () => {
     window.location.reload();
   };
+  console.log(state.selectedShow.bookedSeats);
+  // const checkBooked = (e) => {
+  //   console.log("onLoad", selectedShow.bookedSeats);
+  //   selectedShow.bookedSeats.forEach((item) => {
+  //     if (item === e.target.value) {
+  //       setBooked(true);
+  //     }
+  //   });
+  // };
+
   const handleSelect = (e) => {
     if (e.target.checked) {
       if (selectedSeat.length < seatCounter - 1) {
@@ -35,7 +46,6 @@ const SeatLayout = () => {
   const displaySeats = () => {
     setShowUserDetails(true);
   };
-  console.log("selected show", state.selectedShow);
   const updateSeatSelection = () => {
     if (selectedSeat.length > 0) {
       if (selectedSeat.length - 1 < seatCounter) {

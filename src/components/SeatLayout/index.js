@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import AppContext from "../../store/context";
 import "./index.css";
 import UserDetails from "../UserDetails";
 
 const SeatLayout = () => {
+  const { state } = useContext(AppContext);
   const [seatCounter, setSeatCounter] = useState(0);
   const [selectedSeat, setSelectedSeat] = useState([]);
   const [disableSelection, setDisableSelection] = useState(false);
@@ -33,7 +35,7 @@ const SeatLayout = () => {
   const displaySeats = () => {
     setShowUserDetails(true);
   };
-
+  console.log("selected show", state.selectedShow);
   const updateSeatSelection = () => {
     if (selectedSeat.length > 0) {
       if (selectedSeat.length - 1 < seatCounter) {
@@ -121,7 +123,6 @@ const SeatLayout = () => {
                         <td>
                           <input
                             type="checkbox"
-                            className="seats"
                             id={`${column}${row}`}
                             key={`${column}${row}`}
                             value={`${column}${row}`}

@@ -37,12 +37,13 @@
   font-style: italic;
   font-size: large;
 }
-.ticket-button{
-  background-color: tomato;
+.ticket-button {
+  background-color: #fc766aff;
   float: right;
-  color:white;
-  border-radius: 12px;
+  color: white;
   padding: 20px;
   text-align: center;
   font-size: 20px;
+  text-decoration: none;
+  cursor: pointer;
 }

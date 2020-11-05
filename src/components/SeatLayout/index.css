@@ -1,12 +1,3 @@
-body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-#Username {
-  border: none;
-  border-bottom: 1px solid;
-}
-
 .screen {
   width: 100%;
   height: 20px;
@@ -15,13 +6,12 @@ body {
   line-height: 20px;
   font-size: 15px;
 }
-
 .smallBox::before {
   content: ".";
   width: 15px;
   height: 15px;
   float: left;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 .greenBox::before {
   content: "";
@@ -37,40 +27,12 @@ body {
     0px 1px 0px 0px rgba(255, 255, 255, 0.8);
   background-color: #ccc;
 }
-
-.seats {
-  border: 1px solid red;
-  background: yellow;
-}
-
-.seatGap {
-  width: 40px;
-}
-
-.seatVGap {
-  height: 40px;
-}
-
 table {
   text-align: center;
 }
 
-.Displaytable {
-  text-align: center;
-}
-.Displaytable td,
-.Displaytable th {
-  border: 1px solid;
-  text-align: left;
-}
-
-textarea {
-  border: none;
-  background: transparent;
-}
-
 input[type="checkbox"] {
-  width: 0px;
+  width: 10px;
   margin-right: 18px;
 }
 
@@ -106,7 +68,6 @@ input[type="checkbox"]:checked:before {
 button {
   background-color: tomato;
   color: white;
-  border-radius: 12px;
   padding: 5px;
   text-align: center;
   font-size: 20px;
@@ -118,9 +79,4 @@ button {
 
 .table-margin {
   margin-top: 2em;
-}
-
-.seat-alignment{
-  padding-left: 2em;
-  padding-top: 2em;
 }

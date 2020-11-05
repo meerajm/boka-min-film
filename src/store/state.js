@@ -9,5 +9,6 @@ const state = {
   setSelectedDay: "",
   userDetails: {},
   ticketDetails: [{}],
+  selectedShow: {},
 };
 export default state;

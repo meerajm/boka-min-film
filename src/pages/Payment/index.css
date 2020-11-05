@@ -1,19 +1,16 @@
-html,
-body {
-  margin: 0;  
-  background: linear-gradient(
-    90deg,  
-    rgb(58, 97, 180) 0%,
-    rgb(30, 25, 107) 100%
-  );
-  color: white;
-  font-weight: 200;
-}
 .container {
   display: grid;
   align-items: center;
   justify-items: center;
   padding: 1em;
+  margin: 0;
+  background: linear-gradient(
+    90deg,
+    rgb(58, 97, 180) 0%,
+    rgb(30, 25, 107) 100%
+  );
+  color: white;
+  font-weight: 200;
 }
 .details {
   background-image: url("../../images/paymentBG.jpg");

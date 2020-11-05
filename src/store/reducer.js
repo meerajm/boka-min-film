@@ -37,6 +37,11 @@ const reducer = (state, action) => {
         ...state,
         userDetails: action.data,
       };
+    case "setSelectedShow":
+      return {
+        ...state,
+        selectedShow: action.data,
+      };
     default:
       return state;
   }

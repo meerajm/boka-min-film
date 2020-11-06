@@ -42,6 +42,12 @@ const reducer = (state, action) => {
         ...state,
         selectedShow: action.data,
       };
+    case "setTicketDetails":
+      return {
+        ...state,
+        ticketDetails: action.data,
+      };
+
     default:
       return state;
   }

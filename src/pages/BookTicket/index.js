@@ -59,6 +59,10 @@ const BookTicket = () => {
   }
   const goToNextPage = () => {
     if (selectedCinema) {
+      dispatch({
+        type: "setTicketDetails",
+        data: { date: selectedDate },
+      });
       navigate("./confirm");
     } else {
       toast("Please select a cinema", { type: "error" });

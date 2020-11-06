@@ -6,7 +6,7 @@ const ThankYou = () => {
   const { state } = useContext(AppContext);
   const { userDetails } = state;
   const navigate = useNavigate();
-
+  console.log(state.ticketDetails);
   return (
     <div className="container">
       <h1>Yipeeee!!! Your booking is confirmed!!!</h1>

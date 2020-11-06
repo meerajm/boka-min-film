@@ -23,7 +23,7 @@
     "jsx-a11y/no-noninteractive-element-interactions": [
       "error",
       {
-        "handlers": [ "onKeyPress", "onKeyUp"]
+        "handlers": ["onKeyPress", "onKeyUp"]
       }
     ],
     "no-param-reassign": 0,

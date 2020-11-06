@@ -6,7 +6,7 @@ const state = {
   cinemas: [],
   cinemaNames: [],
   selectedCinema: "",
-  setSelectedDay: "",
+  selectedDay: "",
   userDetails: {},
   ticketDetails: [{}],
   selectedShow: {},

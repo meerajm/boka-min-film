@@ -4,7 +4,8 @@ import "./index.css";
 import UserDetails from "../UserDetails";
 
 const SeatLayout = () => {
-  const { state } = useContext(AppContext);
+  const { state, dispatch } = useContext(AppContext);
+  const { selectedShow, ticketDetails } = state;
   const [seatCounter, setSeatCounter] = useState(0);
   const [selectedSeat, setSelectedSeat] = useState([]);
   const [disableSelection, setDisableSelection] = useState(false);
@@ -16,7 +17,6 @@ const SeatLayout = () => {
   const seatReset = () => {
     window.location.reload();
   };
-  console.log(state.selectedShow.bookedSeats);
   // const checkBooked = (e) => {
   //   console.log("onLoad", selectedShow.bookedSeats);
   //   selectedShow.bookedSeats.forEach((item) => {
@@ -44,8 +44,18 @@ const SeatLayout = () => {
   };
 
   const displaySeats = () => {
+    dispatch({
+      type: "setTicketDetails",
+      data: {
+        ...ticketDetails,
+        time: selectedShow.startTime,
+        quantity: selectedSeat.length,
+        seatNo: selectedSeat,
+      },
+    });
     setShowUserDetails(true);
   };
+
   const updateSeatSelection = () => {
     if (selectedSeat.length > 0) {
       if (selectedSeat.length - 1 < seatCounter) {
@@ -85,6 +95,9 @@ const SeatLayout = () => {
           onClick={() => {
             setSeatCounter(seatCounter + 1);
             setDisableSelection(false);
+            if (selectedSeat.length - 1 < seatCounter) {
+              setShowBookButton(false);
+            }
           }}
         >
           <img src="add.png" alt="+" />

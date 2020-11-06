@@ -11,7 +11,7 @@ toast.configure();
 
 const Payment = () => {
   const { state, dispatch } = useContext(AppContext);
-  const { ticketDetails } = state;
+  const { tickets } = state;
   const navigate = useNavigate();
   const price = 100 * 11.23;
   const name = "BokaMinFilm";
@@ -33,10 +33,11 @@ const Payment = () => {
     dispatch({
       type: "setTicketDetails",
       data: {
-        ...ticketDetails,
+        ...tickets,
         transactionSuccess: payment,
       },
     });
+
     setTimeout(() => {
       navigate("./thank-you");
     }, 2000);

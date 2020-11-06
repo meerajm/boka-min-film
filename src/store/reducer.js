@@ -45,7 +45,7 @@ const reducer = (state, action) => {
     case "setTicketDetails":
       return {
         ...state,
-        ticketDetails: action.data,
+        tickets: action.data,
       };
 
     default:

@@ -1,12 +1,26 @@
 import React, { useContext } from "react";
-import { useNavigate } from "@reach/router";
+import axios from "axios";
 import AppContext from "../../store/context";
 
 const ThankYou = () => {
   const { state } = useContext(AppContext);
-  const { userDetails } = state;
-  const navigate = useNavigate();
-  console.log(state.ticketDetails);
+  const { userDetails, tickets } = state;
+  const baseUrl = process.env.REACT_APP_BASE_URL;
+  const USER_API_URL = `${baseUrl}api/v1/users`;
+  console.log("USER", userDetails);
+  console.log("TICKET", tickets);
+
+  const newUser = JSON.stringify({ ...userDetails, ticketDetails: tickets });
+  console.log(newUser);
+  async function postUserDetails() {
+    const response = await axios.post(`${USER_API_URL}`, newUser, {
+      headers: {
+        "content-type": "application/json",
+      },
+    });
+    console.log(response);
+  }
+
   return (
     <div className="container">
       <h1>Yipeeee!!! Your booking is confirmed!!!</h1>
@@ -19,10 +33,10 @@ const ThankYou = () => {
       <button
         type="button"
         onClick={() => {
-          navigate("./main");
+          postUserDetails();
         }}
       >
-        Go to main page
+        Save my details
       </button>
     </div>
   );

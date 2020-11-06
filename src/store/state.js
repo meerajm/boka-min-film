@@ -8,7 +8,7 @@ const state = {
   selectedCinema: "",
   selectedDay: "",
   userDetails: {},
-  ticketDetails: [{}],
+  tickets: [{}],
   selectedShow: {},
 };
 export default state;

@@ -6,31 +6,32 @@ import "./index.css";
 
 const UserDetailsComponent = () => {
   const { state, dispatch } = useContext(AppContext);
-  const { ticketDetails } = state;
-  const [username, setName] = useState("");
+  const { tickets, selectedMovie } = state;
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNo, setPhoneNo] = useState("");
   const navigate = useNavigate();
   const showDetails = `Show details:
   Movie: ${state.selectedMovie.title},
-  Date: ${ticketDetails.date},
-  Time: ${ticketDetails.time},
-  Quantity: ${ticketDetails.quantity},
-  SeatNo: ${ticketDetails.seatNo}`;
+  Date: ${tickets.date},
+  Time: ${tickets.time},
+  Quantity: ${tickets.quantity},
+  SeatNo: ${tickets.seatNo}`;
+
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch({
       type: "setUserDetails",
-      data: { username, email, phoneNo },
+      data: { name, email, phoneNo },
     });
     dispatch({
       type: "setTicketDetails",
       data: {
-        ...ticketDetails,
-        name: username,
+        ...tickets,
+        username: name,
+        movieName: selectedMovie.title,
       },
     });
-    console.log(showDetails);
     emailjs
       .sendForm(
         "gmail",
@@ -46,15 +47,16 @@ const UserDetailsComponent = () => {
           console.log(error.text);
         }
       );
+
     navigate("./payment");
   };
+
   const handleName = (e) => {
     e.preventDefault();
     setName(e.target.value);
   };
   const handleEmail = (e) => {
     e.preventDefault();
-    console.log(e.target.value);
     setEmail(e.target.value);
   };
   const handlePhoneNo = (e) => {
@@ -68,12 +70,7 @@ const UserDetailsComponent = () => {
         <div>
           <label>
             Full Name:
-            <input
-              type="text"
-              value={username}
-              name="username"
-              onChange={handleName}
-            />
+            <input type="text" value={name} name="name" onChange={handleName} />
           </label>
         </div>
         <div>

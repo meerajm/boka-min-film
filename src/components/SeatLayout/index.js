@@ -5,7 +5,7 @@ import UserDetails from "../UserDetails";
 
 const SeatLayout = () => {
   const { state, dispatch } = useContext(AppContext);
-  const { selectedShow, ticketDetails } = state;
+  const { selectedShow, tickets } = state;
   const [seatCounter, setSeatCounter] = useState(0);
   const [selectedSeat, setSelectedSeat] = useState([]);
   const [disableSelection, setDisableSelection] = useState(false);
@@ -47,7 +47,7 @@ const SeatLayout = () => {
     dispatch({
       type: "setTicketDetails",
       data: {
-        ...ticketDetails,
+        ...tickets,
         time: selectedShow.startTime,
         quantity: selectedSeat.length,
         seatNo: selectedSeat,

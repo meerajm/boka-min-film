@@ -11,9 +11,10 @@ toast.configure();
 
 const Payment = () => {
   const { state, dispatch } = useContext(AppContext);
-  const { tickets } = state;
+  const { tickets, selectedCinema, selectedMovie } = state;
   const navigate = useNavigate();
-  const price = 100 * 11.23;
+  const priceInKr = tickets.quantity * 120;
+  const price = priceInKr * 11.23;
   const name = "BokaMinFilm";
   let payment = false;
   async function handleToken(token) {
@@ -45,9 +46,13 @@ const Payment = () => {
   return (
     <div className="container">
       <div className="details">
-        <h1>Cinema Name</h1>
-        <h1>Movie Name</h1>
-        <h3>Total: </h3>
+        <h1>{selectedCinema}</h1>
+        <h1>{selectedMovie.title}</h1>
+        <h3>
+          Total:&nbsp;
+          {priceInKr}
+          &nbsp;kr
+        </h3>
       </div>
       <StripeCheckout
         stripeKey="pk_test_51HioJQGD6ZzSWKwpBgVhOlwsWz4JlxCdazddqlkJ6sx01WlKAZmqqqks2a1GGOwwhW2FiCa1qFT7XtqqUgwO0E0w00RJIn8Meb"

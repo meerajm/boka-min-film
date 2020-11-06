@@ -19,18 +19,19 @@ const MovieDetails = () => {
       <figure className="poster">
         <img src={selectedMovie.poster} alt={selectedMovie.title} />
         <figcaption className="movie-name">{selectedMovie.title}</figcaption>
-        <button type="button" className="ticket-button" onClick={handleTicket}>
-          Biljetter
-        </button>
-        <figcaption className="text-large-white">
+        <figcaption className="text-large-white bold">
           {selectedMovie.language}
         </figcaption>
-        <figcaption className="text-large-white">
+        <figcaption className="text-large-white bold">
           {selectedMovie.genre}
         </figcaption>
-        <figcaption className="description">
+        <figcaption className="text-large-white">
+          Description:
           {selectedMovie.description}
         </figcaption>
+        <button type="button" onClick={handleTicket}>
+          Biljetter
+        </button>
       </figure>
       <div className="player-wrapper">
         <ReactPlayer

@@ -73,8 +73,8 @@ const SeatLayout = () => {
   return (
     <>
       <div className="ticket-select">
-        <span className="text-with-white">
-          Please select the number of seats
+        <span className="text-large-white">
+          Please select the number of seats:&nbsp;
         </span>
         <button
           type="button"
@@ -106,6 +106,7 @@ const SeatLayout = () => {
       {seatCounter !== 0 && (
         <div>
           <center>
+            <h3 className="text-large-white display-msg">*120 kr per seat</h3>
             <table className="table-margin text-with-white" id="seatsBlock">
               <tr>
                 <td colSpan="15">
@@ -159,8 +160,8 @@ const SeatLayout = () => {
                 );
               })}
             </table>
-
             <br />
+
             {showBookButton && (
               <div>
                 <button type="button" onClick={displaySeats}>
@@ -175,9 +176,16 @@ const SeatLayout = () => {
         </div>
       )}
       {showUserDetails && (
-        <div>
-          <h3>You have selected the seats</h3>
-          <h3>{selectedSeat}</h3>
+        <div className="text-large-white">
+          <h3>
+            Selected seats:&nbsp;
+            <span>{selectedSeat}</span>
+          </h3>
+          <h3>
+            To pay:&nbsp;
+            {selectedSeat.length * 120}
+            &nbsp; kr
+          </h3>
           <UserDetails />
         </div>
       )}

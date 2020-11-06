@@ -25,9 +25,9 @@ const ThankYou = () => {
     <div className="container">
       <h1>Yipeeee!!! Your booking is confirmed!!!</h1>
       <h2>
-        Thank you
-        {userDetails.name}
-        for booking with us. We hope see you again soon.
+        Thank you&nbsp;
+        {userDetails.name.split(" ")[0]}
+        &nbsp;for booking with us. We hope see you again soon.
       </h2>
       <h3>An copy of your ticket has been sent to your inbox.</h3>
       <button

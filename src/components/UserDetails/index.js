@@ -70,7 +70,13 @@ const UserDetailsComponent = () => {
         <div>
           <label>
             Full Name:
-            <input type="text" value={name} name="name" onChange={handleName} />
+            <input
+              type="text"
+              value={name}
+              name="name"
+              placeholder="Your name.."
+              onChange={handleName}
+            />
           </label>
         </div>
         <div>
@@ -80,6 +86,7 @@ const UserDetailsComponent = () => {
               type="text"
               value={email}
               name="email"
+              placeholder="Your email.."
               onChange={handleEmail}
             />
           </label>
@@ -87,7 +94,12 @@ const UserDetailsComponent = () => {
         <div>
           <label>
             Phone Number:
-            <input type="text" value={phoneNo} onChange={handlePhoneNo} />
+            <input
+              type="text"
+              value={phoneNo}
+              placeholder="Your phone number.."
+              onChange={handlePhoneNo}
+            />
           </label>
           <div>
             <label>

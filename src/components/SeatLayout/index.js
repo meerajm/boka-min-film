@@ -17,14 +17,15 @@ const SeatLayout = () => {
   const seatReset = () => {
     window.location.reload();
   };
-  // const checkBooked = (e) => {
-  //   console.log("onLoad", selectedShow.bookedSeats);
-  //   selectedShow.bookedSeats.forEach((item) => {
-  //     if (item === e.target.value) {
-  //       setBooked(true);
-  //     }
-  //   });
-  // };
+  const checkBooked = (value) => {
+    const res = selectedShow.bookedSeats.find((item) => {
+      return item === value;
+    });
+    if (res) {
+      return true;
+    }
+    return false;
+  };
 
   const handleSelect = (e) => {
     if (e.target.checked) {
@@ -94,6 +95,7 @@ const SeatLayout = () => {
           type="button"
           onClick={() => {
             setSeatCounter(seatCounter + 1);
+            checkBooked();
             setDisableSelection(false);
             if (selectedSeat.length - 1 < seatCounter) {
               setShowBookButton(false);
@@ -152,6 +154,11 @@ const SeatLayout = () => {
                             value={`${column}${row}`}
                             onClick={handleSelect}
                             disabled={disableSelection}
+                            hidden={checkBooked(`${column}${row}`)}
+                          />
+                          <div
+                            className="seat-container"
+                            hidden={!checkBooked(`${column}${row}`)}
                           />
                         </td>
                       );

@@ -6,7 +6,7 @@ const Header = () => {
     <div className="header-container">
       <div className="header-row">
         <div className="header-title">
-          <h1>Movie Booking site</h1>
+          <h1>BokaMinFilm</h1>
         </div>
         <div className="header-btn">
           Select Language:

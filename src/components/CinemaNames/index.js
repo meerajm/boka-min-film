@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import AppContext from "../../store/context";
+import "./index.css";
 
 const DisplayCinemaSelection = () => {
   const { state, dispatch } = useContext(AppContext);
@@ -15,7 +16,12 @@ const DisplayCinemaSelection = () => {
   console.log(state);
   return (
     <div>
-      <select id="choose-cinema" value={selectedCinema} onChange={handleChange}>
+      <select
+        id="choose-cinema"
+        className="select-cinema"
+        value={selectedCinema}
+        onChange={handleChange}
+      >
         <option key="0" value="">
           --Select Cinema--
         </option>

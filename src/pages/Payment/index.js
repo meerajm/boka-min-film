@@ -11,14 +11,18 @@ toast.configure();
 
 const Payment = () => {
   const { state, dispatch } = useContext(AppContext);
-  const { tickets, selectedCinema, selectedMovie } = state;
+  const { tickets, selectedCinema, selectedMovie, userDetails } = state;
   const navigate = useNavigate();
+  const baseUrl = process.env.REACT_APP_BASE_URL;
+  const USER_API_URL = `${baseUrl}api/v1/users`;
+  console.log("USER", userDetails);
+  console.log("TICKET", tickets);
   const priceInKr = tickets.quantity * 120;
   const price = priceInKr * 11.23;
   const name = "BokaMinFilm";
   let payment = false;
   async function handleToken(token) {
-    const response = await axios.post("http://localhost:5000/checkout", {
+    const response = await axios.post(`${baseUrl}checkout`, {
       token,
       name,
       price,
@@ -38,7 +42,16 @@ const Payment = () => {
         transactionSuccess: payment,
       },
     });
-
+    const newUser = JSON.stringify({
+      ...userDetails,
+      ticketDetails: { ...tickets, transactionSuccess: payment },
+    });
+    const res = await axios.post(`${USER_API_URL}`, newUser, {
+      headers: {
+        "content-type": "application/json",
+      },
+    });
+    console.log(res);
     setTimeout(() => {
       navigate("./thank-you");
     }, 2000);
@@ -57,7 +70,7 @@ const Payment = () => {
       <div className="details" />
       <div>
         <StripeCheckout
-          stripeKey="pk_test_51HioJQGD6ZzSWKwpBgVhOlwsWz4JlxCdazddqlkJ6sx01WlKAZmqqqks2a1GGOwwhW2FiCa1qFT7XtqqUgwO0E0w00RJIn8Meb"
+          stripeKey={process.env.REACT_APP_STRIPE_KEY}
           token={handleToken}
           amount={price}
           name={name}

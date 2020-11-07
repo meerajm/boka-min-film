@@ -11,8 +11,8 @@ const UserDetailsComponent = () => {
   const [email, setEmail] = useState("");
   const [phoneNo, setPhoneNo] = useState("");
   const navigate = useNavigate();
-  const userID = process.env.EMAILJS_USER_ID;
-  console.log(userID);
+  const userID = process.env.REACT_APP_EMAILJS_USER_ID;
+  console.log("ENV:", userID);
   const showDetails = `Show details:
   Movie: ${state.selectedMovie.title},
   Date: ${tickets.date},

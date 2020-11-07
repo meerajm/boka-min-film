@@ -48,12 +48,14 @@ const MovieTimings = () => {
         {cinemas.map((data) => (
           <div className="items" key={cinemas.id}>
             <span className="align-left">{data.startTime}</span>
-            <input
+            <button
               type="button"
               value={data.id}
               className="book-btn"
               onClick={handleBook}
-            />
+            >
+              Book now
+            </button>
             <span>
               Screen
               {data.screen}

@@ -79,6 +79,7 @@ const SeatLayout = () => {
         </span>
         <button
           type="button"
+          className="counter-btn"
           onClick={() => {
             if (seatCounter === 0) {
               setSeatCounter(0);
@@ -93,6 +94,7 @@ const SeatLayout = () => {
         <span className="counter">{seatCounter}</span>
         <button
           type="button"
+          className="counter-btn"
           onClick={() => {
             setSeatCounter(seatCounter + 1);
             checkBooked();

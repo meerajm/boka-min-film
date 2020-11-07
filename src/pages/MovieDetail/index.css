@@ -1,12 +1,6 @@
-.player-wrapper {
-  position: static;
-  padding-top: 56.25%;
-  width: auto;
-  height: auto;
-}
 .react-player {
   position: absolute;
-  top: 10px;
+  top: 100px;
   right: 20%;
 }
 .react-player button {

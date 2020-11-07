@@ -1,8 +1,23 @@
-.header {
-    padding: 60px;
-    text-align: center;
-    background: #1abc9c;
-    color: white;
-    font-size: 30px;
-  }
-  
+.header-container {
+  width: 100%;
+  display: table;
+  background-color: #f2545b;
+}
+.header-row {
+  display: table-row;
+}
+.header-title {
+  width: 40%;
+  display: table-cell;
+  padding-left: 10%;
+  color: white;
+}
+.header-btn {
+  display: table-cell;
+  float: right;
+  margin-right: 10px;
+  color: white;
+}
+input[type="button"] {
+  border-radius: 10px;
+}

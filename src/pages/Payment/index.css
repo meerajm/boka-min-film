@@ -3,12 +3,7 @@
   align-items: center;
   justify-items: center;
   padding: 1em;
-  margin: 0;
-  background: linear-gradient(
-    90deg,
-    rgb(58, 97, 180) 0%,
-    rgb(30, 25, 107) 100%
-  );
+  margin-top: 1em;  
   color: white;
   font-weight: 200;
 }
@@ -19,4 +14,7 @@
   background-position: 50%;
   height: 300px;
   width: 500px;
+}
+.details-container{
+  
 }

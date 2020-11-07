@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import ReactPlayer from "react-player";
+import Iframe from "react-iframe";
 import { useNavigate } from "@reach/router";
 import AppContext from "../../store/context";
 import "./index.css";
@@ -8,6 +8,7 @@ const MovieDetails = () => {
   const { state } = useContext(AppContext);
   const { selectedMovie } = state;
   const navigate = useNavigate();
+  const trailer = `${selectedMovie.trailer}?modestbranding=1&?showinfo=0`;
 
   const handleTicket = () => {
     navigate("./tickets");
@@ -33,16 +34,14 @@ const MovieDetails = () => {
           Biljetter
         </button>
       </figure>
-      <div className="player-wrapper">
-        <ReactPlayer
-          width="60%"
-          height="60%"
-          url={selectedMovie.trailer}
+      <div className="react-player">
+        <Iframe
+          url={trailer}
+          width="650px"
+          height="450px"
+          display="initial"
+          position="relative"
           controls="true"
-          className="react-player"
-          playing
-          playIcon={<button type="button">&#9658;</button>}
-          light={selectedMovie.poster}
         />
       </div>
     </div>

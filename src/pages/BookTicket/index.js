@@ -69,7 +69,7 @@ const BookTicket = () => {
     }
   };
   return (
-    <div>
+    <div className="book-ticket-container">
       <h1>Boka biljetter</h1>
       <div className="select-container">
         <select

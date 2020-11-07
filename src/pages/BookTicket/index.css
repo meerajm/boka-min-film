@@ -2,12 +2,17 @@
   display: grid;
   grid-template-columns: auto auto;
   grid-gap: 10px;
-  background-color: red;
   padding: 10px;
+  width: 10em;
 }
 .select-date {
   grid-column: 0;
 }
 .select-cinema {
   grid-column: 1;
+}
+.book-ticket-container{
+  color: white;
+  margin: 25em;
+  margin-top: 2em;
 }

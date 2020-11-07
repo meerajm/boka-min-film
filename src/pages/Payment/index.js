@@ -45,7 +45,7 @@ const Payment = () => {
   }
   return (
     <div className="container">
-      <div className="details">
+      <div className="details-container">
         <h1>{selectedCinema}</h1>
         <h1>{selectedMovie.title}</h1>
         <h3>
@@ -54,12 +54,15 @@ const Payment = () => {
           &nbsp;kr
         </h3>
       </div>
-      <StripeCheckout
-        stripeKey="pk_test_51HioJQGD6ZzSWKwpBgVhOlwsWz4JlxCdazddqlkJ6sx01WlKAZmqqqks2a1GGOwwhW2FiCa1qFT7XtqqUgwO0E0w00RJIn8Meb"
-        token={handleToken}
-        amount={price}
-        name={name}
-      />
+      <div className="details" />
+      <div>
+        <StripeCheckout
+          stripeKey="pk_test_51HioJQGD6ZzSWKwpBgVhOlwsWz4JlxCdazddqlkJ6sx01WlKAZmqqqks2a1GGOwwhW2FiCa1qFT7XtqqUgwO0E0w00RJIn8Meb"
+          token={handleToken}
+          amount={price}
+          name={name}
+        />
+      </div>
     </div>
   );
 };

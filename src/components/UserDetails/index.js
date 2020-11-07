@@ -11,6 +11,8 @@ const UserDetailsComponent = () => {
   const [email, setEmail] = useState("");
   const [phoneNo, setPhoneNo] = useState("");
   const navigate = useNavigate();
+  const userID = process.env.EMAILJS_USER_ID;
+  console.log(userID);
   const showDetails = `Show details:
   Movie: ${state.selectedMovie.title},
   Date: ${tickets.date},
@@ -32,21 +34,14 @@ const UserDetailsComponent = () => {
         movieName: selectedMovie.title,
       },
     });
-    emailjs
-      .sendForm(
-        "gmail",
-        "template_qzheows",
-        e.target,
-        "user_Bl0ubee1hE6jVYhnTF6U3"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+    emailjs.sendForm("gmail", "template_qzheows", e.target, userID).then(
+      (result) => {
+        console.log(result.text);
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
 
     navigate("./payment");
   };

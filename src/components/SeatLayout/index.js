@@ -1,9 +1,11 @@
 import React, { useState, useContext } from "react";
+import { useTranslation } from "react-i18next";
 import AppContext from "../../store/context";
 import "./index.css";
 import UserDetails from "../UserDetails";
 
 const SeatLayout = () => {
+  const { t } = useTranslation();
   const { state, dispatch } = useContext(AppContext);
   const { selectedShow, tickets } = state;
   const [seatCounter, setSeatCounter] = useState(0);
@@ -73,61 +75,61 @@ const SeatLayout = () => {
 
   return (
     <>
-      <div className="ticket-select">
-        <span className="text-large-white">
-          Please select the number of seats:&nbsp;
-        </span>
-        <button
-          type="button"
-          className="counter-btn"
-          onClick={() => {
-            if (seatCounter === 0) {
-              setSeatCounter(0);
-            } else {
-              setSeatCounter(seatCounter - 1);
-            }
-            updateSeatSelection();
-          }}
-        >
-          <img src="minus.png" alt="-" />
-        </button>
-        <span className="counter">{seatCounter}</span>
-        <button
-          type="button"
-          className="counter-btn"
-          onClick={() => {
-            setSeatCounter(seatCounter + 1);
-            checkBooked();
-            setDisableSelection(false);
-            if (selectedSeat.length - 1 < seatCounter) {
-              setShowBookButton(false);
-            }
-          }}
-        >
-          <img src="add.png" alt="+" />
-        </button>
-      </div>
-      {seatCounter !== 0 && (
+      <center>
         <div>
-          <center>
-            <h3 className="text-large-white display-msg">*120 kr per seat</h3>
+          <span className="text-large-white">{t("seatSelect.selectText")}</span>
+          <button
+            type="button"
+            className="counter-btn"
+            onClick={() => {
+              if (seatCounter === 0) {
+                setSeatCounter(0);
+              } else {
+                setSeatCounter(seatCounter - 1);
+              }
+              updateSeatSelection();
+            }}
+          >
+            <img src="minus.png" alt="-" />
+          </button>
+          <span className="counter">{seatCounter}</span>
+          <button
+            type="button"
+            className="counter-btn"
+            onClick={() => {
+              setSeatCounter(seatCounter + 1);
+              checkBooked();
+              setDisableSelection(false);
+              if (selectedSeat.length - 1 < seatCounter) {
+                setShowBookButton(false);
+              }
+            }}
+          >
+            <img src="add.png" alt="+" />
+          </button>
+        </div>
+        {seatCounter !== 0 && (
+          <div>
+            <h3 className="text-large-white display-msg">
+              {t("seatSelect.priceText")}
+            </h3>
             <table className="table-margin text-with-white" id="seatsBlock">
               <tr>
                 <td colSpan="15">
-                  <div className="screen">SCREEN</div>
+                  <div className="screen"> {t("seatSelect.screen")}</div>
                 </td>
 
                 <td rowSpan="30" className="seat-alignment">
                   <div className="smallBox greenBox text-with-white">
-                    Selected Seat
+                    {t("seatSelect.selectedSeat")}
                   </div>
                   <br />
                   <div className="smallBox redBox text-with-white">
-                    Reserved Seat
+                    {t("seatSelect.selectedSeat")}
                   </div>
                   <br />
                   <div className="smallBox emptyBox text-with-white">
-                    Empty Seat
+                    {t("seatSelect.emptySeat")}
                   </div>
                   <br />
                 </td>
@@ -174,30 +176,30 @@ const SeatLayout = () => {
             {showBookButton && (
               <div>
                 <button type="button" onClick={displaySeats}>
-                  Bekräfta valet
+                  {t("seatSelect.confirmSelect")}
                 </button>
                 <button type="button" onClick={seatReset}>
-                  Reset seats
+                  {t("seatSelect.resetSeat")}
                 </button>
               </div>
             )}
-          </center>
-        </div>
-      )}
-      {showUserDetails && (
-        <div className="text-large-white">
-          <h3>
-            Selected seats:&nbsp;
-            <span>{selectedSeat}</span>
-          </h3>
-          <h3>
-            To pay:&nbsp;
-            {selectedSeat.length * 120}
-            &nbsp; kr
-          </h3>
-          <UserDetails />
-        </div>
-      )}
+          </div>
+        )}
+        {showUserDetails && (
+          <div className="text-large-white">
+            <h3>
+              Selected seats:&nbsp;
+              <span>{selectedSeat}</span>
+            </h3>
+            <h3>
+              To pay:&nbsp;
+              {selectedSeat.length * 120}
+              &nbsp; kr
+            </h3>
+            <UserDetails />
+          </div>
+        )}
+      </center>
     </>
   );
 };

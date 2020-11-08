@@ -12,5 +12,50 @@
         "genre": "Genre",
         "description": "Beskrivning",
         "tickets": "Biljetter"
+    },
+    "bookTicket": {
+        "bookTickets": "Boka biljetter",
+        "selectDate": "--Välj datum--",
+        "next": "Nästa",
+        "selectCinema": "--Välj bio--",
+        "days": {
+            "sun": "söndag",
+            "mon": "måndag",
+            "tue": "tisdag",
+            "wed": "onsdag",
+            "thu": "torsdag",
+            "fri": "fredag",
+            "sat": "lördag"
+        }
+    },
+    "movieTiming": {
+        "bookNow": "Boka nu",
+        "screen": "Salong"
+    },
+    "seatSelect": {
+        "selectText": "Välj antal platser: ",
+        "priceText": "*120 kr per plats",
+        "screen": "BIODUK",
+        "selectedSeat": "Vald säte",
+        "reservedSeat": "Reserverat säte",
+        "emptySeat": "Tom plats",
+        "confirmSelect": "Bekräfta valet",
+        "resetSeat": "Återställ platser"
+    },
+    "userDetails": {
+        "fullName": "Namn: ",
+        "email": "E-post: ",
+        "phone": "Telefonnummer: ",
+        "showDetails": "Filmdetaljer: ",
+        "placeHolderName": "Ditt namn...",
+        "placeHolderEmail": "Din email...",
+        "placeHolderPhone": "Ditt telefonnummer...",
+        "payment": "Gå till betalning"
+    },
+    "thankyou": {
+        "firstMsg": "Yipeeee !!! Din bokning är bekräftad !!!",
+        "secondMsgPart1": "Tack ",
+        "secondMsgPart2": " för bokning hos oss. Vi hoppas att vi ses snart igen.",
+        "thirdMsg": "En kopia av din biljett har skickats till din inkorg."
     }
 }

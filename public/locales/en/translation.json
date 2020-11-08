@@ -12,5 +12,50 @@
         "genre": "Genre",
         "description": "Description",
         "tickets": "Tickets"
+    },
+    "bookTicket": {
+        "bookTickets": "Book Tickets",
+        "selectDate": "--Select Date--",
+        "next": "Next",
+        "selectCinema": "--Select Cinema--",
+        "days": {
+            "sun": "sunday",
+            "mon": "monday",
+            "tue": "tuesday",
+            "wed": "wednesday",
+            "thu": "thursday",
+            "fri": "friday",
+            "sat": "saturday"
+        }
+    },
+    "movieTiming": {
+        "bookNow": "Book Now",
+        "screen": "Screen"
+    },
+    "seatSelect": {
+        "selectText": "Please select the number of seats: ",
+        "priceText": "*120 kr per seat",
+        "screen": "SCREEN",
+        "selectedSeat": "Selected Seat",
+        "reservedSeat": "Reservered Seat",
+        "emptySeat": "Empty Seat",
+        "confirmSelect": "Confirm seats",
+        "resetSeat": "Reset seats"
+    },
+    "userDetails": {
+        "fullName": "Full Name: ",
+        "email": "E-mail: ",
+        "phone": "Phone Number: ",
+        "showDetails": "Show Details: ",
+        "placeHolderName": "Your name...",
+        "placeHolderEmail": "Your email...",
+        "placeHolderPhone": "Your phone number...",
+        "payment": "Go to payment"
+    },
+    "thankyou": {
+        "firstMsg": "Yipeeee!!! Your booking is confirmed!!!",
+        "secondMsgPart1": "Thank you ",
+        "secondMsgPart2": " for booking with us. We hope see you again soon.",
+        "thirdMsg": "A copy of your ticket has been sent to your inbox."
     }
 }

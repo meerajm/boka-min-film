@@ -1,11 +1,13 @@
 import React, { useContext } from "react";
+import { useTranslation } from "react-i18next";
 import AppContext from "../../store/context";
 import "./index.css";
 
 const DisplayCinemaSelection = () => {
+  const { t } = useTranslation();
   const { state, dispatch } = useContext(AppContext);
   const { cinemaNames, selectedCinema } = state;
-
+  console.log("selected day", state.selectedDay);
   const handleChange = (e) => {
     e.preventDefault();
     dispatch({
@@ -13,7 +15,6 @@ const DisplayCinemaSelection = () => {
       data: e.target.value,
     });
   };
-  console.log(state);
   return (
     <div>
       <select
@@ -23,7 +24,7 @@ const DisplayCinemaSelection = () => {
         onChange={handleChange}
       >
         <option key="0" value="">
-          --Select Cinema--
+          {t("bookTicket.selectCinema")}
         </option>
         {cinemaNames.map((name) => (
           <option key={name._id} value={name.cinemaName}>

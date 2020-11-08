@@ -1,10 +1,12 @@
 import React, { useState, useContext } from "react";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "@reach/router";
 import emailjs from "emailjs-com";
 import AppContext from "../../store/context";
 import "./index.css";
 
 const UserDetailsComponent = () => {
+  const { t } = useTranslation();
   const { state, dispatch } = useContext(AppContext);
   const { tickets, selectedMovie } = state;
   const [name, setName] = useState("");
@@ -64,41 +66,41 @@ const UserDetailsComponent = () => {
       <form onSubmit={handleSubmit}>
         <div>
           <label>
-            Full Name:
+            {t("userDetails.fullName")}
             <input
               type="text"
               value={name}
               name="name"
-              placeholder="Your name.."
+              placeholder={t("userDetails.placeHolderName")}
               onChange={handleName}
             />
           </label>
         </div>
         <div>
           <label>
-            E-mail:
+            {t("userDetails.email")}
             <input
               type="text"
               value={email}
               name="email"
-              placeholder="Your email.."
+              placeholder={t("userDetails.placeHolderEmail")}
               onChange={handleEmail}
             />
           </label>
         </div>
         <div>
           <label>
-            Phone Number:
+            {t("userDetails.phone")}
             <input
               type="text"
               value={phoneNo}
-              placeholder="Your phone number.."
+              placeholder={t("userDetails.placeHolderPhone")}
               onChange={handlePhoneNo}
             />
           </label>
           <div>
             <label>
-              Show Details:
+              {t("userDetails.showDetails")}
               <textarea
                 type="text"
                 rows="6"
@@ -110,7 +112,7 @@ const UserDetailsComponent = () => {
           </div>
         </div>
         <div>
-          <input type="submit" value="Payment" />
+          <input type="submit" value={t("userDetails.payment")} />
         </div>
       </form>
     </div>

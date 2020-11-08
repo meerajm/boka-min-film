@@ -1,10 +1,12 @@
 import React, { useContext, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "@reach/router";
 import axios from "axios";
 import AppContext from "../../store/context";
 import "./index.css";
 
 const MovieTimings = () => {
+  const { t } = useTranslation();
   const { state, dispatch } = useContext(AppContext);
   const { selectedMovie, selectedCinema, cinemas, selectedDay } = state;
   const baseUrl = process.env.REACT_APP_BASE_URL;
@@ -54,10 +56,11 @@ const MovieTimings = () => {
               className="book-btn"
               onClick={handleBook}
             >
-              Book now
+              {t("movieTiming.bookNow")}
             </button>
             <span>
-              Screen
+              {t("movieTiming.screen")}
+              &nbsp;
               {data.screen}
             </span>
           </div>

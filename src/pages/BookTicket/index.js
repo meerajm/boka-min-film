@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "@reach/router";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -7,6 +8,7 @@ import DisplayCinemaSelection from "../../components/CinemaNames";
 import "./index.css";
 
 const BookTicket = () => {
+  const { t } = useTranslation();
   const { state, dispatch } = useContext(AppContext);
   const { selectedCinema } = state;
   const navigate = useNavigate();
@@ -35,7 +37,9 @@ const BookTicket = () => {
     setSelectedDate(e.target.value);
     let formattedDate = e.target.value.split(" ")[2];
     if (formattedDate === "i") {
-      formattedDate = days[today.getDay() + 1];
+      let index = today.getDay();
+      index = days.length ? (index = 0) : (index += 1);
+      formattedDate = days[index];
     }
     dispatch({
       type: "setSelectedDay",
@@ -70,7 +74,7 @@ const BookTicket = () => {
   };
   return (
     <div className="book-ticket-container">
-      <h1>Boka biljetter</h1>
+      <h1>{t("bookTicket.bookTickets")}</h1>
       <div className="select-container">
         <select
           id="choose-date"
@@ -79,7 +83,7 @@ const BookTicket = () => {
           onChange={handleChange}
         >
           <option key="0" value="">
-            --Select Date--
+            {t("bookTicket.selectDate")}
           </option>
           {allDays.map((day) => (
             <option key={day} value={day}>
@@ -91,7 +95,7 @@ const BookTicket = () => {
       </div>
       {selectedDate && (
         <button type="button" onClick={goToNextPage}>
-          Next
+          {t("bookTicket.next")}
         </button>
       )}
     </div>

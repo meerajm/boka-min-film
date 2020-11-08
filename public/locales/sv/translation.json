@@ -1,0 +1,16 @@
+{
+    "title": "Hej och välkommen till BokaMinFilm",
+    "description": {
+        "part1": "Byt språk mellan engelska och svenska med knapparna ovan."
+    },
+    "mainPage": {
+        "heading": "Aktuellt på bio",
+        "loading": "laddar..."
+    },
+    "movieDetail": {
+        "language": "Språk",
+        "genre": "Genre",
+        "description": "Beskrivning",
+        "tickets": "Biljetter"
+    }
+}

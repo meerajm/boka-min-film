@@ -1,10 +1,12 @@
 import React, { useEffect, useContext } from "react";
+import { useTranslation } from "react-i18next";
 import axios from "axios";
 import AppContext from "../../store/context";
 import Movie from "../../components/Movies";
 import "./index.css";
 
 const Main = () => {
+  const { t } = useTranslation();
   const { state, dispatch } = useContext(AppContext);
   const baseUrl = process.env.REACT_APP_BASE_URL;
   const MOVIE_API_URL = `${baseUrl}api/v1/movies`;
@@ -38,10 +40,10 @@ const Main = () => {
   return (
     <div className="wrapper">
       <h2>
-        <strong>Aktuellt på bio</strong>
+        <strong>{t("mainPage.heading")}</strong>
       </h2>
       <div className="cards">
-        {loading && <span>loading...</span>}
+        {loading && <span>{t("mainPage.loading")}</span>}
 
         {errorMessage && <span>{errorMessage}</span>}
 

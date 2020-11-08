@@ -1,0 +1,16 @@
+{
+    "title": "Hello and welcome to BokaMinFilm",
+    "description": {
+        "part1": "Switch language between english and german using buttons above."
+    },
+    "mainPage": {
+        "heading": "Currently playing",
+        "loading": "loading..."
+    },
+    "movieDetail": {
+        "language": "Language",
+        "genre": "Genre",
+        "description": "Description",
+        "tickets": "Tickets"
+    }
+}

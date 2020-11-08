@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
+import { useTranslation } from "react-i18next";
 import Iframe from "react-iframe";
 import { useNavigate } from "@reach/router";
 import AppContext from "../../store/context";
 import "./index.css";
 
 const MovieDetails = () => {
+  const { t } = useTranslation();
   const { state } = useContext(AppContext);
   const { selectedMovie } = state;
   const navigate = useNavigate();
@@ -21,17 +23,19 @@ const MovieDetails = () => {
         <img src={selectedMovie.poster} alt={selectedMovie.title} />
         <figcaption className="movie-name">{selectedMovie.title}</figcaption>
         <figcaption className="text-large-white bold">
+          {t("movieDetail.language")}: &nbsp;
           {selectedMovie.language}
         </figcaption>
         <figcaption className="text-large-white bold">
+          {t("movieDetail.genre")}: &nbsp;
           {selectedMovie.genre}
         </figcaption>
         <figcaption className="text-large-white">
-          Description:
+          {t("movieDetail.description")}: &nbsp;
           {selectedMovie.description}
         </figcaption>
         <button type="button" onClick={handleTicket}>
-          Biljetter
+          {t("movieDetail.tickets")}
         </button>
       </figure>
       <div className="react-player">

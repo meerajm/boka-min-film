@@ -5,6 +5,7 @@
   color: #fff;
   line-height: 20px;
   font-size: 15px;
+  text-align: center;
 }
 .smallBox::before {
   content: ".";
@@ -76,4 +77,10 @@ button {
 }
 .counter-btn {
   width: 2em;
+}
+table td {
+  padding: 5px;
+  color: white;
+  font-size: 20px;
+  border: none;
 }

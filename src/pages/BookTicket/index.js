@@ -38,9 +38,14 @@ const BookTicket = () => {
     let formattedDate = e.target.value.split(" ")[2];
     if (formattedDate === "i") {
       let index = today.getDay();
-      index = days.length ? (index = 0) : (index += 1);
+      index += 1;
+      if (index === days.length) {
+        index = 0;
+      }
+      console.log(index);
       formattedDate = days[index];
     }
+    console.log(formattedDate);
     dispatch({
       type: "setSelectedDay",
       data: formattedDate,

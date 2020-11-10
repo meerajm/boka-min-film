@@ -11,12 +11,17 @@ toast.configure();
 
 const Payment = () => {
   const { state, dispatch } = useContext(AppContext);
-  const { tickets, selectedCinema, selectedMovie, userDetails } = state;
+  const {
+    tickets,
+    selectedCinema,
+    selectedMovie,
+    userDetails,
+    selectedShow,
+  } = state;
   const navigate = useNavigate();
   const baseUrl = process.env.REACT_APP_BASE_URL;
   const USER_API_URL = `${baseUrl}api/v1/users`;
-  console.log("USER", userDetails);
-  console.log("TICKET", tickets);
+  const CINEMA_API_URL = `${baseUrl}api/v1/cinemas`;
   const priceInKr = tickets.quantity * 120;
   const price = priceInKr * 11.23;
   const name = "BokaMinFilm";
@@ -46,12 +51,23 @@ const Payment = () => {
       ...userDetails,
       ticketDetails: { ...tickets, transactionSuccess: payment },
     });
-    const res = await axios.post(`${USER_API_URL}`, newUser, {
+    const resForAddUser = await axios.post(`${USER_API_URL}`, newUser, {
       headers: {
         "content-type": "application/json",
       },
     });
-    console.log(res);
+    console.log(resForAddUser);
+    console.log(tickets.seatNo);
+    const resForUpdateSeats = await axios.patch(
+      `${CINEMA_API_URL}/${selectedCinema}/${selectedShow.id}`,
+      tickets,
+      {
+        headers: {
+          "content-type": "application/json",
+        },
+      }
+    );
+    console.log(resForUpdateSeats);
     setTimeout(() => {
       navigate("./thank-you");
     }, 2000);

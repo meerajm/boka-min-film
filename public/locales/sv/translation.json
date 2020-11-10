@@ -30,7 +30,9 @@
     },
     "movieTiming": {
         "bookNow": "Boka nu",
-        "screen": "Salong"
+        "screen": "Salong",
+        "movieTimeHeader": "Filmtid",
+        "screenNoHeader": "Salongnummer:"
     },
     "seatSelect": {
         "selectText": "Välj antal platser: ",

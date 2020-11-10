@@ -30,8 +30,8 @@ function App() {
           <MovieDetail path="details" />
           <BookTicket path="tickets" />
           <SeatLayout path="seats" />
+          <UserDetails path="user-details" />
           <Payment path="payment" />
-          <UserDetails path="user" />
           <MovieTiming path="confirm" />
           <ThankYou path="thank-you" />
         </Router>

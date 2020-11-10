@@ -1,27 +1,21 @@
-.grid-container {
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 10px;
-    background-color: tomato;
-    padding: 10px;
-  }
-  .grid-container > div {
-    background-color: thistle;
-    text-align: center;
-    width: 100%;
-    padding: 20px;
-    font-size: 30px;
-  }
-  .items {
-    grid-column: 1;
-  }
-  .align-left {
-    float: left;
-    width: 100px;
-  }
-  .book-btn {
-    float: right;
-    width: 100px;
-    grid-column: 1;
-    height: 60px;
-  }
+.show-details-table {
+  border-collapse: collapse;
+  width: 90%;
+  background-color: #f2545b;
+}
+
+.show-details-table th,
+td {
+  padding: 5px;
+  padding-top: 22px;
+  border-bottom: 1px solid #ddd;
+  color: white;
+  font-size: 20px;
+}
+
+.book-btn {
+  float: right;
+  width: 100px;
+  grid-column: 1;
+  height: 60px;
+}

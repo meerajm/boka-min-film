@@ -1,20 +1,20 @@
+import { useNavigate } from "@reach/router";
 import React, { useState, useContext } from "react";
 import { useTranslation } from "react-i18next";
 import AppContext from "../../store/context";
 import "./index.css";
-import UserDetails from "../UserDetails";
 
 const SeatLayout = () => {
   const { t } = useTranslation();
   const { state, dispatch } = useContext(AppContext);
   const { selectedShow, tickets } = state;
+  const navigate = useNavigate();
   const [seatCounter, setSeatCounter] = useState(0);
   const [selectedSeat, setSelectedSeat] = useState([]);
   const [disableSelection, setDisableSelection] = useState(false);
   const [showBookButton, setShowBookButton] = useState(false);
   const rows = [1, 2, 3, 4, 5];
   const columns = ["A", "B", "C", "D", "E"];
-  const [showUserDetails, setShowUserDetails] = useState(false);
 
   const seatReset = () => {
     window.location.reload();
@@ -56,7 +56,7 @@ const SeatLayout = () => {
         seatNo: selectedSeat,
       },
     });
-    setShowUserDetails(true);
+    navigate("./user-details");
   };
 
   const updateSeatSelection = () => {
@@ -69,7 +69,6 @@ const SeatLayout = () => {
       }
       setSelectedSeat([]);
       setShowBookButton(false);
-      setShowUserDetails(false);
     }
   };
 
@@ -185,20 +184,17 @@ const SeatLayout = () => {
             )}
           </div>
         )}
-        {showUserDetails && (
-          <div className="text-large-white">
-            <h3>
-              Selected seats:&nbsp;
-              <span>{selectedSeat}</span>
-            </h3>
-            <h3>
-              To pay:&nbsp;
-              {selectedSeat.length * 120}
-              &nbsp; kr
-            </h3>
-            <UserDetails />
-          </div>
-        )}
+        <div className="text-large-white">
+          <h3>
+            Selected seats:&nbsp;
+            <span>{selectedSeat}</span>
+          </h3>
+          <h3>
+            To pay:&nbsp;
+            {selectedSeat.length * 120}
+            &nbsp; kr
+          </h3>
+        </div>
       </center>
     </>
   );

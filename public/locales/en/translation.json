@@ -30,7 +30,9 @@
     },
     "movieTiming": {
         "bookNow": "Book Now",
-        "screen": "Screen"
+        "screen": "Screen",
+        "movieTimeHeader": "Movie Time",
+        "screenNoHeader": "Screen No:"
     },
     "seatSelect": {
         "selectText": "Please select the number of seats: ",

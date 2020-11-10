@@ -46,26 +46,32 @@ const MovieTimings = () => {
         <strong>{selectedCinema}</strong>
       </h2>
       <img src={selectedMovie.poster} alt={selectedMovie.title} />
-      <div className="grid-container">
+      <table className="show-details-table">
+        <tr>
+          <th>{t("movieTiming.movieTimeHeader")}</th>
+          <th>{t("movieTiming.screenNoHeader")}</th>
+        </tr>
         {cinemas.map((data) => (
-          <div className="items" key={cinemas.id}>
-            <span className="align-left">{data.startTime}</span>
-            <button
-              type="button"
-              value={data.id}
-              className="book-btn"
-              onClick={handleBook}
-            >
-              {t("movieTiming.bookNow")}
-            </button>
-            <span>
+          <tr key={cinemas.id}>
+            <td>{data.startTime}</td>
+            <td>
               {t("movieTiming.screen")}
               &nbsp;
               {data.screen}
-            </span>
-          </div>
+            </td>
+            <td>
+              <button
+                type="button"
+                value={data.id}
+                className="book-btn"
+                onClick={handleBook}
+              >
+                {t("movieTiming.bookNow")}
+              </button>
+            </td>
+          </tr>
         ))}
-      </div>
+      </table>
     </div>
   );
 };

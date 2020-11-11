@@ -10,6 +10,7 @@ import ThankYou from "./pages/ThankYou";
 import Header from "./components/Header";
 import UserDetails from "./components/UserDetails";
 import MovieTiming from "./components/MovieTimings";
+import Footer from "./components/Footer";
 import AppContext from "./store/context";
 import store from "./store";
 
@@ -36,6 +37,7 @@ function App() {
           <ThankYou path="thank-you" />
         </Router>
       </AppContext.Provider>
+      <Footer />
     </>
   );
 }

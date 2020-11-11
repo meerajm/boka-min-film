@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useTranslation } from "react-i18next";
 import Iframe from "react-iframe";
 import { useNavigate } from "@reach/router";
@@ -10,13 +10,15 @@ const MovieDetails = () => {
   const { state } = useContext(AppContext);
   const { selectedMovie } = state;
   const navigate = useNavigate();
-  const trailer = `${selectedMovie.trailer}?modestbranding=1&?showinfo=0`;
+  const [play, setPlay] = useState(false);
+  const trailer = play
+    ? `${selectedMovie.trailer}?modestbranding=1&autoplay=1`
+    : `${selectedMovie.trailer}?modestbranding=1`;
 
   const handleTicket = () => {
     navigate("./tickets");
   };
 
-  console.log(state);
   return (
     <div>
       <figure className="poster">
@@ -47,6 +49,13 @@ const MovieDetails = () => {
           position="relative"
           controls="true"
         />
+        <button
+          type="button"
+          className="play-btn"
+          onClick={() => setPlay(true)}
+        >
+          <img src="video-player.png" alt="play" />
+        </button>
       </div>
     </div>
   );

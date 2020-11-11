@@ -1,13 +1,17 @@
 form {
   padding: 1.5em;
   border-radius: 1em; 
-  margin: 10em; 
+  margin: 1em; 
   margin-top: 2em;
+  background-color: thistle;
+  width: 50%;
 }
-
+form div{
+  width: auto;
+}
 input[type="text"],
 textarea {
-  width: 100%;
+  width: 300px;
   padding: 5px 10px;
   margin: 4px 0;
   box-sizing: border-box;
@@ -17,7 +21,7 @@ textarea {
 label {
   padding: 12px 12px 12px 0;
   display: inline-block;
-  width: 25%;
+  width: 100px;
   margin-top: 6px;
 }
 input[type="submit"] {

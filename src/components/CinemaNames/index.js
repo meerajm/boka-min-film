@@ -7,7 +7,6 @@ const DisplayCinemaSelection = () => {
   const { t } = useTranslation();
   const { state, dispatch } = useContext(AppContext);
   const { cinemaNames, selectedCinema } = state;
-  console.log("selected day", state.selectedDay);
   const handleChange = (e) => {
     e.preventDefault();
     dispatch({

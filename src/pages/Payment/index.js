@@ -57,7 +57,6 @@ const Payment = () => {
       },
     });
     console.log(resForAddUser);
-    console.log(tickets.seatNo);
     const resForUpdateSeats = await axios.patch(
       `${CINEMA_API_URL}/${selectedCinema}/${selectedShow.id}`,
       tickets,

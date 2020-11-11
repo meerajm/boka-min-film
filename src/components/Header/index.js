@@ -12,20 +12,26 @@ const Header = () => {
         </div>
         <div className="header-btn">
           Select Language:
-          <input
+          <button
+            className="language-btn"
             type="button"
             value="En-us"
             onClick={() => {
               i18n.changeLanguage("en");
             }}
-          />
-          <input
+          >
+            <img src="india.png" alt="Hindi" />
+          </button>
+          <button
+            className="language-btn"
             type="button"
             value="En-sw"
             onClick={() => {
               i18n.changeLanguage("sv");
             }}
-          />
+          >
+            <img src="sweden.png" alt="Swedish" />
+          </button>
         </div>
       </div>
     </div>

@@ -26,12 +26,9 @@ const MovieTimings = () => {
   }, []);
 
   const handleBook = (e) => {
-    console.log("clicked button", e.target.value);
     const selectedShowDetails = cinemas.find((show) => {
       return show.id === +e.target.value;
     });
-    console.log(cinemas);
-    console.log(selectedShowDetails);
     dispatch({
       type: "setSelectedShow",
       data: selectedShowDetails,

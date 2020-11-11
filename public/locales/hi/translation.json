@@ -1,0 +1,63 @@
+{
+    "title": "नमस्कार और BokaMinFilm में आपका स्वागत है",
+    "description": {
+        "part1": "ऊपर दिए गए बटन का उपयोग करके हिंदी और सनी के बीच की भाषा बदलें।"
+    },
+    "mainPage": {
+        "heading": "इस समय खेल रहा है",
+        "loading": "लोड हो रहा है..."
+    },
+    "movieDetail": {
+        "language": "भाषा",
+        "genre": "शैली",
+        "description": "विवरण",
+        "tickets": "टिकट"
+    },
+    "bookTicket": {
+        "bookTickets": "टिकटे काटना",
+        "selectDate": "--तारीख़ चुनें--",
+        "next": "आगे",
+        "selectCinema": "--सिनेमा का चयन करें--",
+        "days": {
+            "sun": "रविवार",
+            "mon": "सोमवार",
+            "tue": "मंगलवार",
+            "wed": "बुधवार",
+            "thu": "गुरूवार",
+            "fri": "शुक्रवार",
+            "sat": "शनिवार"
+        }
+    },
+    "movieTiming": {
+        "bookNow": "अभी बुक करें",
+        "screen": "स्क्रीन",
+        "movieTimeHeader": "फिल्म का समय",
+        "screenNoHeader": "स्क्रीन नंबर:"
+    },
+    "seatSelect": {
+        "selectText": "कृपया सीटों की संख्या चुनें: ",
+        "priceText": "*प्रति सीट पर 120 कि.मी.",
+        "screen": "स्क्रीन",
+        "selectedSeat": "चयनित सीट",
+        "reservedSeat": "आरक्षित सीट",
+        "emptySeat": "खाली सीट",
+        "confirmSelect": "सीटों की पुष्टि करें",
+        "resetSeat": "सीटों को रीसेट करें"
+    },
+    "userDetails": {
+        "fullName": "पूरा नाम: ",
+        "email": "ईमेल: ",
+        "phone": "फ़ोन नंबर: ",
+        "showDetails": "शो विवरण: ",
+        "placeHolderName": "आपका नाम...",
+        "placeHolderEmail": "आपका ईमेल...",
+        "placeHolderPhone": "आपका फ़ोन नंबर...",
+        "payment": "भुगतान करने के लिए जाओ"
+    },
+    "thankyou": {
+        "firstMsg": "Yipeeee !!! आपकी बुकिंग पक्की है !!!",
+        "secondMsgPart1": "धन्यवाद ",
+        "secondMsgPart2": " हमारे साथ बुकिंग के लिए। हमें उम्मीद है कि आप जल्द ही फिर से मिलेंगे।",
+        "thirdMsg": "आपके टिकट की एक प्रति आपके इनबॉक्स में भेज दी गई है।"
+    }
+}

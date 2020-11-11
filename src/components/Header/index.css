@@ -18,7 +18,8 @@
   margin-right: 10px;
   color: white;
 }
-input[type="button"] {
+.language-btn {
   border-radius: 10px;
   cursor: pointer;
+  width: 2em;
 }

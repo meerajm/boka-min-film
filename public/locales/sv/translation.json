@@ -53,7 +53,14 @@
         "placeHolderName": "Ditt namn...",
         "placeHolderEmail": "Din email...",
         "placeHolderPhone": "Ditt telefonnummer...",
-        "payment": "Gå till betalning"
+        "payment": "Bekräfta bokningen och gå till betalning"
+    },
+    "ticketDetails": {
+        "movieName": "Filmnamn: ",
+        "cinemaName":"Biografnamn: ",
+        "showDetails": "Filmdetaljer: ",
+        "date": "Datum: ",
+        "time": "Tid: "
     },
     "thankyou": {
         "firstMsg": "Yipeeee !!! Din bokning är bekräftad !!!",

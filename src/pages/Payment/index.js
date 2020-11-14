@@ -68,7 +68,7 @@ const Payment = () => {
     );
     console.log(resForUpdateSeats);
     setTimeout(() => {
-      navigate("./thank-you");
+      navigate("./ticket-details");
     }, 2000);
   }
   return (

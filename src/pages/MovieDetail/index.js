@@ -48,14 +48,17 @@ const MovieDetails = () => {
           display="initial"
           position="relative"
           controls="true"
+          allow="autoplay"
         />
-        <button
-          type="button"
-          className="play-btn"
-          onClick={() => setPlay(true)}
-        >
-          <img src="video-player.png" alt="play" />
-        </button>
+        {!play && (
+          <button
+            type="button"
+            className="play-btn"
+            onClick={() => setPlay(true)}
+          >
+            <img src="video-player.png" alt="play" />
+          </button>
+        )}
       </div>
     </div>
   );

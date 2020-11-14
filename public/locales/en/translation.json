@@ -53,7 +53,14 @@
         "placeHolderName": "Your name...",
         "placeHolderEmail": "Your email...",
         "placeHolderPhone": "Your phone number...",
-        "payment": "Go to payment"
+        "payment": "Confirm booking and go to payment"
+    },
+    "ticketDetails": {
+        "movieName": "Movie Name: ",
+        "cinemaName": "Cinema Name: ",
+        "showDetails": "Show Details: ",
+        "date": "Date: ",
+        "time": "Time: "
     },
     "thankyou": {
         "firstMsg": "Yipeeee!!! Your booking is confirmed!!!",

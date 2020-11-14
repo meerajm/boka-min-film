@@ -4,10 +4,11 @@ import { Router } from "@reach/router";
 import Main from "./pages/Main";
 import MovieDetail from "./pages/MovieDetail";
 import BookTicket from "./pages/BookTicket";
-import SeatLayout from "./components/SeatLayout";
+import TicketDetail from "./pages/TicketDetail";
 import Payment from "./pages/Payment";
 import ThankYou from "./pages/ThankYou";
 import Header from "./components/Header";
+import SeatLayout from "./components/SeatLayout";
 import UserDetails from "./components/UserDetails";
 import MovieTiming from "./components/MovieTimings";
 import Footer from "./components/Footer";
@@ -34,6 +35,7 @@ function App() {
           <UserDetails path="user-details" />
           <Payment path="payment" />
           <MovieTiming path="confirm" />
+          <TicketDetail path="ticket-details" />
           <ThankYou path="thank-you" />
         </Router>
       </AppContext.Provider>

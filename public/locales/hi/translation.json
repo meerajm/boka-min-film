@@ -53,7 +53,14 @@
         "placeHolderName": "आपका नाम...",
         "placeHolderEmail": "आपका ईमेल...",
         "placeHolderPhone": "आपका फ़ोन नंबर...",
-        "payment": "भुगतान करने के लिए जाओ"
+        "payment": "बुकिंग की पुष्टि करें और भुगतान पर जाएं"
+    },
+    "ticketDetails": {
+        "movieName": "मूवी का नाम: ",
+        "cinemaName":"रंगमंच का नाम: ",
+        "showDetails": "प्रदर्शन का विवरण: ",
+        "date": "दिनांक: ",
+        "time": "समय: "
     },
     "thankyou": {
         "firstMsg": "Yipeeee !!! आपकी बुकिंग पक्की है !!!",

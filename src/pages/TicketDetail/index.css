@@ -1,0 +1,9 @@
+.ticket-details{
+    position:relative;
+    align-self: centre;
+    z-index: 1;
+    float: left;
+}
+.text-white{
+    color: white;
+}

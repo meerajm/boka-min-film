@@ -37,6 +37,7 @@
     "seatSelect": {
         "selectText": "Välj antal platser: ",
         "priceText": "*120 kr per plats",
+        "maxSeat":"*Du kan välja maximalt 5 platser",
         "screen": "BIODUK",
         "selectedSeat": "Vald säte",
         "reservedSeat": "Reserverat säte",

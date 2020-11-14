@@ -15,9 +15,9 @@ const Header = () => {
           <button
             className="language-btn"
             type="button"
-            value="En-us"
+            value="Hi-ind"
             onClick={() => {
-              i18n.changeLanguage("en");
+              i18n.changeLanguage("hi");
             }}
           >
             <img src="india.png" alt="Hindi" />
@@ -25,7 +25,7 @@ const Header = () => {
           <button
             className="language-btn"
             type="button"
-            value="En-sw"
+            value="Sv-sw"
             onClick={() => {
               i18n.changeLanguage("sv");
             }}

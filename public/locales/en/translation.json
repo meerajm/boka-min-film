@@ -36,6 +36,7 @@
     },
     "seatSelect": {
         "selectText": "Please select the number of seats: ",
+        "maxSeat": "*You can select maximum of 5 seats",
         "priceText": "*120 kr per seat",
         "screen": "SCREEN",
         "selectedSeat": "Selected Seat",

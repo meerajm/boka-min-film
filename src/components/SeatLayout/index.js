@@ -96,7 +96,11 @@ const SeatLayout = () => {
             type="button"
             className="counter-btn"
             onClick={() => {
-              setSeatCounter(seatCounter + 1);
+              if (seatCounter === 5) {
+                setSeatCounter(5);
+              } else {
+                setSeatCounter(seatCounter + 1);
+              }
               checkBooked();
               setDisableSelection(false);
               if (selectedSeat.length - 1 < seatCounter) {
@@ -111,6 +115,8 @@ const SeatLayout = () => {
           <div>
             <h3 className="text-large-white display-msg">
               {t("seatSelect.priceText")}
+              <br />
+              {t("seatSelect.maxSeat")}
             </h3>
             <table className="table-margin text-with-white" id="seatsBlock">
               <tr>

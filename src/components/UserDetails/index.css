@@ -1,12 +1,12 @@
 form {
   padding: 1.5em;
-  border-radius: 1em; 
-  margin: 1em; 
+  border-radius: 1em;
+  margin: 1em;
   margin-top: 2em;
   background-color: thistle;
   width: 50%;
 }
-form div{
+form div {
   width: auto;
 }
 input[type="text"],
@@ -24,9 +24,17 @@ label {
   width: 100px;
   margin-top: 6px;
 }
+.validation {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+  width: 200px;
+  margin-top: 6px;
+  color: red;
+  font-style: italic;
+}
 input[type="submit"] {
   background-color: #44bba4;
-  margin:10px;
+  margin: 10px;
   color: white;
   text-align: center;
   width: 18em;
@@ -36,5 +44,5 @@ input[type="submit"] {
   cursor: pointer;
 }
 input[type="submit"]:hover {
-  background-color:#0f8b72;
+  background-color: #0f8b72;
 }

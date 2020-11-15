@@ -26,6 +26,7 @@
         "handlers": ["onKeyPress", "onKeyUp"]
       }
     ],
+    "no-useless-escape": 0,
     "no-param-reassign": 0,
     "no-underscore-dangle": 0,
     "react/jsx-one-expression-per-line": 0,

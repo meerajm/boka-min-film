@@ -10,8 +10,11 @@ const UserDetailsComponent = () => {
   const { state, dispatch } = useContext(AppContext);
   const { tickets, selectedMovie } = state;
   const [name, setName] = useState("");
+  const [nameValidator, setNameValidator] = useState(false);
   const [email, setEmail] = useState("");
+  const [emailValidator, setEmailValidator] = useState(false);
   const [phoneNo, setPhoneNo] = useState("");
+  const [phoneNoValidator, setPhoneNoValidator] = useState(false);
   const navigate = useNavigate();
   const userID = process.env.REACT_APP_EMAILJS_USER_ID;
   const showDetails = `Show details:
@@ -21,42 +24,76 @@ const UserDetailsComponent = () => {
   Quantity: ${tickets.quantity},
   SeatNo: ${tickets.seatNo}`;
 
+  const validateForm = (e) => {
+    e.preventDefault();
+    console.log("name: ", name);
+    console.log("email: ", email);
+    console.log("phone: ", phoneNo);
+    if (name && email && phoneNo) {
+      const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      if (!emailRegex.test(email.toLowerCase())) {
+        setEmailValidator(true);
+        return false;
+      }
+      return true;
+    }
+    if (!name) {
+      setNameValidator(true);
+    } else {
+      console.log("disable name");
+      setNameValidator(false);
+    }
+    if (!email) {
+      setEmailValidator(true);
+    }
+    if (!phoneNo) {
+      setPhoneNoValidator(true);
+    }
+    return false;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch({
-      type: "setUserDetails",
-      data: { name, email, phoneNo },
-    });
-    dispatch({
-      type: "setTicketDetails",
-      data: {
-        ...tickets,
-        username: name,
-        movieName: selectedMovie.title,
-      },
-    });
-    emailjs.sendForm("gmail", "template_qzheows", e.target, userID).then(
-      (result) => {
-        console.log(result.text);
-      },
-      (error) => {
-        console.log(error.text);
-      }
-    );
+    const validateResult = validateForm(e);
+    if (validateResult) {
+      dispatch({
+        type: "setUserDetails",
+        data: { name, email, phoneNo },
+      });
+      dispatch({
+        type: "setTicketDetails",
+        data: {
+          ...tickets,
+          username: name,
+          movieName: selectedMovie.title,
+        },
+      });
+      emailjs.sendForm("gmail", "template_qzheows", e.target, userID).then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
 
-    navigate("./payment");
+      navigate("./payment");
+    }
   };
 
   const handleName = (e) => {
     e.preventDefault();
+    if (e.target.value) setNameValidator(false);
     setName(e.target.value);
   };
   const handleEmail = (e) => {
     e.preventDefault();
+    if (e.target.value) setEmailValidator(false);
     setEmail(e.target.value);
   };
   const handlePhoneNo = (e) => {
     e.preventDefault();
+    if (e.target.value) setPhoneNoValidator(false);
     setPhoneNo(e.target.value);
   };
 
@@ -72,6 +109,10 @@ const UserDetailsComponent = () => {
             placeholder={t("userDetails.placeHolderName")}
             onChange={handleName}
           />
+
+          {nameValidator && (
+            <label className="validation">*Please enter a name</label>
+          )}
         </label>
       </div>
       <div>
@@ -84,6 +125,9 @@ const UserDetailsComponent = () => {
             placeholder={t("userDetails.placeHolderEmail")}
             onChange={handleEmail}
           />
+          {emailValidator && (
+            <label className="validation">*Please enter a valid email</label>
+          )}
         </label>
       </div>
       <div>
@@ -95,6 +139,9 @@ const UserDetailsComponent = () => {
             placeholder={t("userDetails.placeHolderPhone")}
             onChange={handlePhoneNo}
           />
+          {phoneNoValidator && (
+            <label className="validation">*Please enter a valid phone no</label>
+          )}
         </label>
         <div>
           <label>

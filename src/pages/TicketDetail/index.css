@@ -1,9 +1,17 @@
-.ticket-details{
-    position:relative;
-    align-self: centre;
-    z-index: 1;
-    float: left;
+.ticket-details-container {
+  padding: 15px;  
 }
-.text-white{
-    color: white;
+.ticket-details {
+  float: left;
+  background-color: maroon;
+  border: 1px solid black;
+  margin-left: 25%;
+  padding: 2em;
+}
+.text-white {
+  color: white;
+  text-align: center;
+}
+td img {
+  height: 300px;
 }

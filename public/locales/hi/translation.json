@@ -60,7 +60,10 @@
         "cinemaName":"रंगमंच का नाम: ",
         "showDetails": "प्रदर्शन का विवरण: ",
         "date": "दिनांक: ",
-        "time": "समय: "
+        "time": "समय: ",
+        "paymentStatus":"भुगतान की स्थिति: ",
+        "paymentSuccess":"सफल",
+        "paymentFailed":"असफल"
     },
     "thankyou": {
         "firstMsg": "Yipeeee !!! आपकी बुकिंग पक्की है !!!",

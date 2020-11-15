@@ -7,20 +7,19 @@ const TicketDetail = () => {
   const { t } = useTranslation();
   const { state } = useContext(AppContext);
   const { tickets, selectedCinema, selectedMovie, selectedShow } = state;
-  const divBG = {
-    backgroundImage: `url(${selectedMovie.poster})`,
-    width: "100%",
-    height: "470px",
-    opacity: "0.6",
-  };
-
+  const paymentStatus = tickets.transactionSuccess
+    ? "paymentSuccess"
+    : "paymentFailed";
   return (
-    <div style={divBG}>
+    <div className="ticket-details-container">
       <h1 className="text-white">Ticket details</h1>
       <table className="ticket-details">
         <tr>
           <td>{t("ticketDetails.movieName")}</td>
           <td>{tickets.movieName}</td>
+          <td rowSpan="3">
+            <img src={selectedMovie.poster} alt={selectedMovie.title} />
+          </td>
         </tr>
         <tr>
           <td>{t("ticketDetails.cinemaName")}</td>
@@ -44,6 +43,14 @@ const TicketDetail = () => {
         <tr>
           <td>{t("movieTiming.screen")}</td>
           <td>{selectedShow.screen}</td>
+        </tr>
+        <tr>
+          <td>{t("ticketDetails.paymentStatus")}</td>
+          <td>{t(`ticketDetails.${paymentStatus}`)}</td>
+        </tr>
+        <tr>
+          <td />
+          <td />
         </tr>
       </table>
     </div>

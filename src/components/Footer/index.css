@@ -1,13 +1,15 @@
 footer {
-  position: relative;
-  margin-bottom: 0;
+  position: fixed;
+  left: 0;
+  bottom: 0;
   width: 100%;
-}
-.footer-container {
   background-color: #f2545b;
-  padding: 25px 50px;
+  color: white;
   text-align: center;
   padding: 15px;
+}
+.footer-container {
+  padding: 25px 50px;
 }
 
 a.footer {

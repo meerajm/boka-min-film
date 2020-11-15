@@ -60,7 +60,10 @@
         "cinemaName": "Cinema Name: ",
         "showDetails": "Show Details: ",
         "date": "Date: ",
-        "time": "Time: "
+        "time": "Time: ",
+        "paymentStatus":"Payment Status: ",
+        "paymentSuccess":"Successful",
+        "paymentFailed":"Failed"
     },
     "thankyou": {
         "firstMsg": "Yipeeee!!! Your booking is confirmed!!!",

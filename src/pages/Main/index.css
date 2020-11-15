@@ -119,11 +119,3 @@ button {
 button:hover {
   background-color:#0f8b72;
 }
-.header {
-  margin-top: 0;
-  padding: 10px;
-  text-align: center;
-  background-color: #1abc9c;
-  color: white;
-  font-size: 30px;
-}

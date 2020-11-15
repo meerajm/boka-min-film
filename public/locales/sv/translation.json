@@ -60,7 +60,10 @@
         "cinemaName":"Biografnamn: ",
         "showDetails": "Filmdetaljer: ",
         "date": "Datum: ",
-        "time": "Tid: "
+        "time": "Tid: ",
+        "paymentStatus":"Betalningsstatus: ",
+        "paymentSuccess":"Framgångsrik",
+        "paymentFailed":"Fel"
     },
     "thankyou": {
         "firstMsg": "Yipeeee !!! Din bokning är bekräftad !!!",

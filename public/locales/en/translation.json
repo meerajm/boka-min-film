@@ -53,7 +53,10 @@
         "placeHolderName": "Your name...",
         "placeHolderEmail": "Your email...",
         "placeHolderPhone": "Your phone number...",
-        "payment": "Confirm booking and go to payment"
+        "payment": "Confirm booking and go to payment",
+        "nameValidation":"* Please enter a name",
+        "emailValidation":"* Please enter a valid email",
+        "phoneValidation":"* Please enter a valid phone no"
     },
     "ticketDetails": {
         "movieName": "Movie Name: ",

@@ -53,7 +53,10 @@
         "placeHolderName": "आपका नाम...",
         "placeHolderEmail": "आपका ईमेल...",
         "placeHolderPhone": "आपका फ़ोन नंबर...",
-        "payment": "बुकिंग की पुष्टि करें और भुगतान पर जाएं"
+        "payment": "बुकिंग की पुष्टि करें और भुगतान पर जाएं",
+        "nameValidation":"* कृपया एक नाम दर्ज करें",
+        "emailValidation":"* कृपया अपना मान्य ईमेल लिखें",
+        "phoneValidation":"* कृपया कोई मान्य फ़ोन नंबर दर्ज करें"
     },
     "ticketDetails": {
         "movieName": "मूवी का नाम: ",

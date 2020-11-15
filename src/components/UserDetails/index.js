@@ -35,6 +35,11 @@ const UserDetailsComponent = () => {
         setEmailValidator(true);
         return false;
       }
+      const phoneRegex = /^([+]46)\s*(7[0236])\s*(\d{4})\s*(\d{3})$/;
+      if (!phoneRegex.test(phoneNo)) {
+        setPhoneNoValidator(true);
+        return false;
+      }
       return true;
     }
     if (!name) {
@@ -111,7 +116,9 @@ const UserDetailsComponent = () => {
           />
 
           {nameValidator && (
-            <label className="validation">*Please enter a name</label>
+            <label className="validation">
+              {t("userDetails.nameValidation")}
+            </label>
           )}
         </label>
       </div>
@@ -126,7 +133,9 @@ const UserDetailsComponent = () => {
             onChange={handleEmail}
           />
           {emailValidator && (
-            <label className="validation">*Please enter a valid email</label>
+            <label className="validation">
+              {t("userDetails.emailValidation")}
+            </label>
           )}
         </label>
       </div>
@@ -140,7 +149,9 @@ const UserDetailsComponent = () => {
             onChange={handlePhoneNo}
           />
           {phoneNoValidator && (
-            <label className="validation">*Please enter a valid phone no</label>
+            <label className="validation">
+              {t("userDetails.phoneValidation")}
+            </label>
           )}
         </label>
         <div>

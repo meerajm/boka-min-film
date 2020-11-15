@@ -53,7 +53,10 @@
         "placeHolderName": "Ditt namn...",
         "placeHolderEmail": "Din email...",
         "placeHolderPhone": "Ditt telefonnummer...",
-        "payment": "Bekräfta bokningen och gå till betalning"
+        "payment": "Bekräfta bokningen och gå till betalning",
+        "nameValidation":"* Ange ett namn",
+        "emailValidation":"* Ange ett giltigt e-postmeddelande",
+        "phoneValidation":"* Ange ett giltigt telefonnummer"
     },
     "ticketDetails": {
         "movieName": "Filmnamn: ",

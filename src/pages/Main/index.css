@@ -12,7 +12,8 @@ h2 strong,
 }
 body {
   background: #5a5a66;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Alegreya";
+  font-weight: bold;
 }
 .wrapper {
   padding: 15px;  

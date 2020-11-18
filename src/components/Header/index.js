@@ -8,7 +8,9 @@ const Header = () => {
     <div className="header-container">
       <div className="header-row">
         <div className="header-title">
-          <h1>BokaMinFilm</h1>
+          <a href="/main" className="menu">
+            <h1>BokaMinFilm</h1>
+          </a>
         </div>
         <div className="header-btn">
           Select Language:

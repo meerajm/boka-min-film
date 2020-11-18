@@ -1,12 +1,13 @@
 .ticket-details-container {
-  padding: 15px;  
+  padding: 15px;
 }
 .ticket-details {
-  float: left;
+  border-collapse: collapse;
+  width: 60%;
   background-color: maroon;
-  border: 1px solid black;
-  margin-left: 25%;
-  padding: 2em;
+  margin-bottom: 20px;
+  border: 2px solid black;
+  margin-left: 20%;
 }
 .text-white {
   color: white;
@@ -14,4 +15,7 @@
 }
 td img {
   height: 300px;
+}
+.ok-btn {
+  margin-left: 40%;
 }

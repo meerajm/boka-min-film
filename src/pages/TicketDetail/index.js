@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { useNavigate } from "@reach/router";
 import { useTranslation } from "react-i18next";
 import AppContext from "../../store/context";
 import "./index.css";
@@ -7,6 +8,7 @@ const TicketDetail = () => {
   const { t } = useTranslation();
   const { state } = useContext(AppContext);
   const { tickets, selectedCinema, selectedMovie, selectedShow } = state;
+  const navigate = useNavigate();
   const paymentStatus = tickets.transactionSuccess
     ? "paymentSuccess"
     : "paymentFailed";
@@ -53,6 +55,16 @@ const TicketDetail = () => {
           <td />
         </tr>
       </table>
+      <button
+        className="ok-btn"
+        type="button"
+        onClick={() => {
+          navigate("./thank-you");
+        }}
+      >
+        OK
+      </button>
+      <br />
     </div>
   );
 };

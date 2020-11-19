@@ -1,7 +1,7 @@
 .header-container {
   width: 100%;
   display: table;
-  background-color: #f2545b;
+  background-color: maroon;
 }
 .header-row {
   display: table-row;
@@ -23,14 +23,12 @@
   cursor: pointer;
   width: 2em;
 }
-
 .menu {
   color: #f2f2f2;
   text-align: center;
   text-decoration: none;
   font-size: 17px;
 }
-
 .menu:hover {
   color: black;
 }

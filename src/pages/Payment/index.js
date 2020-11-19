@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { useNavigate } from "@reach/router";
+import { useTranslation } from "react-i18next";
 import StripeCheckout from "react-stripe-checkout";
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -11,6 +12,7 @@ toast.configure();
 
 const Payment = () => {
   const { state, dispatch } = useContext(AppContext);
+  const { t } = useTranslation();
   const {
     tickets,
     selectedCinema,
@@ -77,7 +79,7 @@ const Payment = () => {
         <h1>{selectedCinema}</h1>
         <h1>{selectedMovie.title}</h1>
         <h3>
-          Total:&nbsp;
+          {t("paymentPage.total")}
           {priceInKr}
           &nbsp;kr
         </h3>

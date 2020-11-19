@@ -1,7 +1,7 @@
 .show-details-table {
   border-collapse: collapse;
   width: 90%;
-  background-color:maroon;
+  background-color: gray;
   margin-bottom: 20px;
 }
 
@@ -13,10 +13,18 @@ td {
   color: white;
   font-size: 20px;
 }
+.show-details-table tr:hover {
+  background-color: brown;
+}
 
 .book-btn {
   float: right;
   width: 100px;
   grid-column: 1;
   height: 60px;
+}
+
+.small-img {
+  height: 300px;
+  width: 200px;
 }

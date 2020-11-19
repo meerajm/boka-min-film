@@ -3,7 +3,7 @@ form {
   border-radius: 1em;
   margin: 1em;
   margin-top: 2em;
-  background-color: thistle;
+  background-color: gray;
   width: 50%;
 }
 form div {
@@ -16,7 +16,7 @@ textarea {
   margin: 4px 0;
   box-sizing: border-box;
   background-color: lightpink;
-  border: 2px solid red;
+  border: 2px solid maroon;
 }
 label {
   padding: 12px 12px 12px 0;
@@ -33,7 +33,7 @@ label {
   font-style: italic;
 }
 input[type="submit"] {
-  background-color: #44bba4;
+  background-color: maroon;
   margin: 10px;
   color: white;
   text-align: center;
@@ -42,7 +42,9 @@ input[type="submit"] {
   font-size: 20px;
   border-radius: 10px;
   cursor: pointer;
+  border: none;
 }
 input[type="submit"]:hover {
-  background-color: #0f8b72;
+  background-color: gray;
+  border: 2px solid maroon;
 }

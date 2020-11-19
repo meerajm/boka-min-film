@@ -62,7 +62,7 @@ const TicketDetail = () => {
           navigate("./thank-you");
         }}
       >
-        OK
+        {t("ticketDetails.ok")}
       </button>
       <br />
     </div>

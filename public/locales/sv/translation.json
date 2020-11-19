@@ -3,6 +3,9 @@
     "description": {
         "part1": "Byt språk mellan engelska och svenska med knapparna ovan."
     },
+    "header":{
+        "selectLang":"Välj språk: "
+    },
     "mainPage": {
         "heading": "Aktuellt på bio",
         "loading": "laddar..."
@@ -43,7 +46,8 @@
         "reservedSeat": "Reserverat säte",
         "emptySeat": "Tom plats",
         "confirmSelect": "Bekräfta valet",
-        "resetSeat": "Återställ platser"
+        "resetSeat": "Återställ platser",
+        "toPay":"Att betala: "
     },
     "userDetails": {
         "fullName": "Namn: ",
@@ -58,6 +62,9 @@
         "emailValidation":"* Ange ett giltigt e-postmeddelande",
         "phoneValidation":"* Ange ett giltigt telefonnummer"
     },
+    "paymentPage": {
+        "total": "Total: "
+    },
     "ticketDetails": {
         "movieName": "Filmnamn: ",
         "cinemaName":"Biografnamn: ",
@@ -66,7 +73,8 @@
         "time": "Tid: ",
         "paymentStatus":"Betalningsstatus: ",
         "paymentSuccess":"Framgångsrik",
-        "paymentFailed":"Fel"
+        "paymentFailed":"Fel",
+        "ok":"OK"
     },
     "thankyou": {
         "firstMsg": "Yipeeee !!! Din bokning är bekräftad !!!",

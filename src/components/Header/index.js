@@ -4,6 +4,7 @@ import "./index.css";
 
 const Header = () => {
   const { i18n } = useTranslation();
+  const { t } = useTranslation();
   return (
     <div className="header-container">
       <div className="header-row">
@@ -13,7 +14,7 @@ const Header = () => {
           </a>
         </div>
         <div className="header-btn">
-          Select Language:
+          {t("header.selectLang")}
           <button
             className="language-btn"
             type="button"

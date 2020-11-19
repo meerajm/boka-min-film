@@ -4,9 +4,9 @@
 .ticket-details {
   border-collapse: collapse;
   width: 60%;
-  background-color: maroon;
+  background-color: gray;
   margin-bottom: 20px;
-  border: 2px solid black;
+  border: 2px solid maroon;
   margin-left: 20%;
 }
 .text-white {

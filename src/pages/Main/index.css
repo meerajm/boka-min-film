@@ -11,7 +11,7 @@ h2 strong,
   display: flex;
 }
 body {
-  background: #5a5a66;
+  background: black;
   font-family: "Alegreya";
   font-weight: bold;
 }
@@ -26,7 +26,7 @@ h2 {
 }
 h2 strong {
   z-index: 2;
-  background: #24282f;
+  background: black;
   padding: 4px 8px;
 }
 h2:after {
@@ -48,7 +48,7 @@ h2:after {
   width: 180px;
   height: 270px;
   overflow: hidden;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 5px 10px gray;
   transform-origin: center top;
   transform-style: preserve-3d;
   transform: translateZ(0);
@@ -107,7 +107,7 @@ h2:after {
   opacity: 0.15;
 }
 button {
-  background-color: #44bba4;
+  background-color: maroon;
   margin:10px;
   color: white;
   text-align: center;
@@ -116,7 +116,8 @@ button {
   font-size: 20px;
   border-radius: 10px;
   cursor: pointer;
+  border: none;
 }
 button:hover {
-  background-color:#0f8b72;
+  background-color:gray;
 }

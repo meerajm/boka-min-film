@@ -130,7 +130,7 @@ const SeatLayout = () => {
                   </div>
                   <br />
                   <div className="smallBox redBox text-with-white">
-                    {t("seatSelect.selectedSeat")}
+                    {t("seatSelect.reservedSeat")}
                   </div>
                   <br />
                   <div className="smallBox emptyBox text-with-white">
@@ -192,11 +192,12 @@ const SeatLayout = () => {
         )}
         <div className="text-large-white">
           <h3>
-            Selected seats:&nbsp;
+            {t("seatSelect.selectedSeat")}
+            :&nbsp;
             <span>{selectedSeat}</span>
           </h3>
           <h3>
-            To pay:&nbsp;
+            {t("seatSelect.toPay")}
             {selectedSeat.length * 120}
             &nbsp; kr
           </h3>

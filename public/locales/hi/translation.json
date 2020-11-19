@@ -3,6 +3,9 @@
     "description": {
         "part1": "ऊपर दिए गए बटन का उपयोग करके हिंदी और सनी के बीच की भाषा बदलें।"
     },
+    "header":{
+        "selectLang":"भाषा का चयन करें: "
+    },
     "mainPage": {
         "heading": "इस समय खेल रहा है",
         "loading": "लोड हो रहा है..."
@@ -43,7 +46,8 @@
         "reservedSeat": "आरक्षित सीट",
         "emptySeat": "खाली सीट",
         "confirmSelect": "सीटों की पुष्टि करें",
-        "resetSeat": "सीटों को रीसेट करें"
+        "resetSeat": "सीटों को रीसेट करें",
+        "toPay":"भुगतान किया जाना है: "
     },
     "userDetails": {
         "fullName": "पूरा नाम: ",
@@ -54,19 +58,23 @@
         "placeHolderEmail": "आपका ईमेल...",
         "placeHolderPhone": "आपका फ़ोन नंबर...",
         "payment": "बुकिंग की पुष्टि करें और भुगतान पर जाएं",
-        "nameValidation":"* कृपया एक नाम दर्ज करें",
-        "emailValidation":"* कृपया अपना मान्य ईमेल लिखें",
-        "phoneValidation":"* कृपया कोई मान्य फ़ोन नंबर दर्ज करें"
+        "nameValidation": "* कृपया एक नाम दर्ज करें",
+        "emailValidation": "* कृपया अपना मान्य ईमेल लिखें",
+        "phoneValidation": "* कृपया कोई मान्य फ़ोन नंबर दर्ज करें"
+    },
+    "paymentPage": {
+        "total": "संपूर्ण: "
     },
     "ticketDetails": {
         "movieName": "मूवी का नाम: ",
-        "cinemaName":"रंगमंच का नाम: ",
+        "cinemaName": "रंगमंच का नाम: ",
         "showDetails": "प्रदर्शन का विवरण: ",
         "date": "दिनांक: ",
         "time": "समय: ",
-        "paymentStatus":"भुगतान की स्थिति: ",
-        "paymentSuccess":"सफल",
-        "paymentFailed":"असफल"
+        "paymentStatus": "भुगतान की स्थिति: ",
+        "paymentSuccess": "सफल",
+        "paymentFailed": "असफल",
+        "ok": "ठीक है"
     },
     "thankyou": {
         "firstMsg": "Yipeeee !!! आपकी बुकिंग पक्की है !!!",

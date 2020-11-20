@@ -26,15 +26,15 @@ const MovieDetails = () => {
         <figcaption className="movie-name">{selectedMovie.title}</figcaption>
         <figcaption className="text-large-white bold">
           {t("movieDetail.language")}: &nbsp;
-          {selectedMovie.language}
+          <span className="movie-info">{selectedMovie.language}</span>
         </figcaption>
         <figcaption className="text-large-white bold">
           {t("movieDetail.genre")}: &nbsp;
-          {selectedMovie.genre}
+          <span className="movie-info">{selectedMovie.genre}</span>
         </figcaption>
         <figcaption className="text-large-white">
           {t("movieDetail.description")}: &nbsp;
-          {selectedMovie.description}
+          <span className="movie-info">{selectedMovie.description}</span>
         </figcaption>
         <button type="button" onClick={handleTicket}>
           {t("movieDetail.tickets")}

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "@reach/router";
 import axios from "axios";
@@ -12,11 +12,15 @@ const MovieTimings = () => {
   const baseUrl = process.env.REACT_APP_BASE_URL;
   const CINEMA_API_URL = `${baseUrl}api/v1/cinemas/${selectedCinema}/${selectedMovie.title}/${selectedDay}`;
   const navigate = useNavigate();
+  const [displayMsg, setDisplayMsg] = useState(false);
 
   useEffect(() => {
     async function fetchTheatreData() {
       const response = await axios.get(`${CINEMA_API_URL}`);
       const allCinemas = await response.data;
+      if (allCinemas.length === 0) {
+        setDisplayMsg(true);
+      }
       dispatch({
         type: "setCinemas",
         data: allCinemas,
@@ -48,32 +52,37 @@ const MovieTimings = () => {
           src={selectedMovie.poster}
           alt={selectedMovie.title}
         />
-        <table className="show-details-table">
-          <tr>
-            <th>{t("movieTiming.movieTimeHeader")}</th>
-            <th>{t("movieTiming.screenNoHeader")}</th>
-          </tr>
-          {cinemas.map((data) => (
-            <tr key={cinemas.id}>
-              <td>{data.startTime}</td>
-              <td>
-                {t("movieTiming.screen")}
-                &nbsp;
-                {data.screen}
-              </td>
-              <td>
-                <button
-                  type="button"
-                  value={data.id}
-                  className="book-btn"
-                  onClick={handleBook}
-                >
-                  {t("movieTiming.bookNow")}
-                </button>
-              </td>
+        {displayMsg && (
+          <div className="display-msg">{t("movieTiming.displayMsg")}</div>
+        )}
+        {!displayMsg && (
+          <table className="show-details-table">
+            <tr>
+              <th>{t("movieTiming.movieTimeHeader")}</th>
+              <th>{t("movieTiming.screenNoHeader")}</th>
             </tr>
-          ))}
-        </table>
+            {cinemas.map((data) => (
+              <tr key={cinemas.id}>
+                <td>{data.startTime}</td>
+                <td>
+                  {t("movieTiming.screen")}
+                  &nbsp;
+                  {data.screen}
+                </td>
+                <td>
+                  <button
+                    type="button"
+                    value={data.id}
+                    className="book-btn"
+                    onClick={handleBook}
+                  >
+                    {t("movieTiming.bookNow")}
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </table>
+        )}
       </center>
     </div>
   );

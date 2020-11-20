@@ -35,7 +35,8 @@
         "bookNow": "Boka nu",
         "screen": "Salong",
         "movieTimeHeader": "Filmtid",
-        "screenNoHeader": "Salongnummer:"
+        "screenNoHeader": "Salongnummer:",
+        "displayMsg":"Tyvärr, den här filmen spelas inte för valt datum och film."
     },
     "seatSelect": {
         "selectText": "Välj antal platser: ",

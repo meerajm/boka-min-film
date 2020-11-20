@@ -3,8 +3,8 @@
     "description": {
         "part1": "ऊपर दिए गए बटन का उपयोग करके हिंदी और सनी के बीच की भाषा बदलें।"
     },
-    "header":{
-        "selectLang":"भाषा का चयन करें: "
+    "header": {
+        "selectLang": "भाषा का चयन करें: "
     },
     "mainPage": {
         "heading": "इस समय खेल रहा है",
@@ -35,7 +35,8 @@
         "bookNow": "अभी बुक करें",
         "screen": "स्क्रीन",
         "movieTimeHeader": "फिल्म का समय",
-        "screenNoHeader": "स्क्रीन नंबर:"
+        "screenNoHeader": "स्क्रीन नंबर:",
+        "displayMsg": "क्षमा करें, यह फिल्म चयनित तिथि और सिनेमा के लिए नहीं चल रही है।"
     },
     "seatSelect": {
         "selectText": "कृपया सीटों की संख्या चुनें: ",
@@ -47,7 +48,7 @@
         "emptySeat": "खाली सीट",
         "confirmSelect": "सीटों की पुष्टि करें",
         "resetSeat": "सीटों को रीसेट करें",
-        "toPay":"भुगतान किया जाना है: "
+        "toPay": "भुगतान किया जाना है: "
     },
     "userDetails": {
         "fullName": "पूरा नाम: ",

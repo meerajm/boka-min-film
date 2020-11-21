@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useEffect, useReducer } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import { Router } from "@reach/router";
 import Main from "./pages/Main";
@@ -17,7 +17,15 @@ import store from "./store";
 
 function App() {
   const { t } = useTranslation();
-  const [state, dispatch] = useReducer(store.reducer, store.initialState);
+  const localState = JSON.parse(localStorage.getItem("allContent"));
+  const [state, dispatch] = useReducer(
+    store.reducer,
+    localState || store.initialState
+  );
+
+  useEffect(() => {
+    localStorage.setItem("allContent", JSON.stringify(state));
+  }, [state]);
 
   return (
     <>

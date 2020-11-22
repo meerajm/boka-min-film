@@ -112,7 +112,7 @@ button {
   color: white;
   text-align: center;
   width: 8em;
-  height: 2em;
+  height: auto;
   font-size: 20px;
   border-radius: 10px;
   cursor: pointer;

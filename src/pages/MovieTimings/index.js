@@ -57,30 +57,34 @@ const MovieTimings = () => {
         )}
         {!displayMsg && (
           <table className="show-details-table">
-            <tr>
-              <th>{t("movieTiming.movieTimeHeader")}</th>
-              <th>{t("movieTiming.screenNoHeader")}</th>
-            </tr>
-            {cinemas.map((data) => (
-              <tr key={cinemas.id}>
-                <td>{data.startTime}</td>
-                <td>
-                  {t("movieTiming.screen")}
-                  &nbsp;
-                  {data.screen}
-                </td>
-                <td>
-                  <button
-                    type="button"
-                    value={data.id}
-                    className="book-btn"
-                    onClick={handleBook}
-                  >
-                    {t("movieTiming.bookNow")}
-                  </button>
-                </td>
+            <thead>
+              <tr key="title">
+                <th>{t("movieTiming.movieTimeHeader")}</th>
+                <th>{t("movieTiming.screenNoHeader")}</th>
               </tr>
-            ))}
+            </thead>
+            <tbody>
+              {cinemas.map((data) => (
+                <tr key={cinemas.id}>
+                  <td>{data.startTime}</td>
+                  <td>
+                    {t("movieTiming.screen")}
+                    &nbsp;
+                    {data.screen}
+                  </td>
+                  <td>
+                    <button
+                      type="button"
+                      value={data.id}
+                      className="book-btn"
+                      onClick={handleBook}
+                    >
+                      {t("movieTiming.bookNow")}
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
           </table>
         )}
       </center>

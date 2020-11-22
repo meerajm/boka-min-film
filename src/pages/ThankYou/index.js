@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { useNavigate } from "@reach/router";
 import { useTranslation } from "react-i18next";
 import AppContext from "../../store/context";
 
@@ -6,6 +7,7 @@ const ThankYou = () => {
   const { t } = useTranslation();
   const { state } = useContext(AppContext);
   const { userDetails } = state;
+  const navigate = useNavigate();
 
   return (
     <div className="container">
@@ -18,7 +20,15 @@ const ThankYou = () => {
         </span>
       </h3>
       <h3>{t("thankyou.thirdMsg")}</h3>
-      <button type="button">Go to Main</button>
+      <button
+        type="button"
+        onClick={() => {
+          localStorage.removeItem("allContent");
+          navigate("./main");
+        }}
+      >
+        {t("thankyou.bookAgain")}
+      </button>
     </div>
   );
 };

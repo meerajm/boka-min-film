@@ -10,7 +10,7 @@ const Header = () => {
       <div className="header-row">
         <div className="header-title">
           <a href="/main" className="menu">
-            <h1>BokaMinFilm</h1>
+            <h1 className="title-text">BokaMinFilm</h1>
           </a>
         </div>
         <div className="header-btn">

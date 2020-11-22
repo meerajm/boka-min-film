@@ -119,62 +119,64 @@ const SeatLayout = () => {
               {t("seatSelect.maxSeat")}
             </h3>
             <table className="table-margin text-with-white" id="seatsBlock">
-              <tr>
-                <td colSpan="15">
-                  <div className="screen"> {t("seatSelect.screen")}</div>
-                </td>
+              <tbody>
+                <tr>
+                  <td colSpan="15">
+                    <div className="screen"> {t("seatSelect.screen")}</div>
+                  </td>
 
-                <td rowSpan="30" className="seat-alignment">
-                  <div className="smallBox greenBox text-with-white">
-                    {t("seatSelect.selectedSeat")}
-                  </div>
+                  <td rowSpan="30" className="seat-alignment">
+                    <div className="smallBox greenBox text-with-white">
+                      {t("seatSelect.selectedSeat")}
+                    </div>
+                    <br />
+                    <div className="smallBox redBox text-with-white">
+                      {t("seatSelect.reservedSeat")}
+                    </div>
+                    <br />
+                    <div className="smallBox emptyBox text-with-white">
+                      {t("seatSelect.emptySeat")}
+                    </div>
+                    <br />
+                  </td>
                   <br />
-                  <div className="smallBox redBox text-with-white">
-                    {t("seatSelect.reservedSeat")}
-                  </div>
-                  <br />
-                  <div className="smallBox emptyBox text-with-white">
-                    {t("seatSelect.emptySeat")}
-                  </div>
-                  <br />
-                </td>
-                <br />
-              </tr>
+                </tr>
 
-              <tr>
-                <td />
-                {rows.map((row) => {
-                  return <td>{row}</td>;
-                })}
-              </tr>
-              {columns.map((column) => {
-                return (
-                  <tr>
+                <tr>
+                  <td />
+                  {rows.map((row) => {
+                    return <td>{row}</td>;
+                  })}
+                </tr>
+                {columns.map((column) => {
+                  return (
                     <tr>
-                      <td>{column}</td>
+                      <tr>
+                        <td>{column}</td>
+                      </tr>
+                      {rows.map((row) => {
+                        return (
+                          <td>
+                            <input
+                              type="checkbox"
+                              id={`${column}${row}`}
+                              key={`${column}${row}`}
+                              value={`${column}${row}`}
+                              onClick={handleSelect}
+                              disabled={disableSelection}
+                              hidden={checkBooked(`${column}${row}`)}
+                            />
+                            <div
+                              className="seat-container"
+                              hidden={!checkBooked(`${column}${row}`)}
+                            />
+                          </td>
+                        );
+                      })}
                     </tr>
-                    {rows.map((row) => {
-                      return (
-                        <td>
-                          <input
-                            type="checkbox"
-                            id={`${column}${row}`}
-                            key={`${column}${row}`}
-                            value={`${column}${row}`}
-                            onClick={handleSelect}
-                            disabled={disableSelection}
-                            hidden={checkBooked(`${column}${row}`)}
-                          />
-                          <div
-                            className="seat-container"
-                            hidden={!checkBooked(`${column}${row}`)}
-                          />
-                        </td>
-                      );
-                    })}
-                  </tr>
-                );
-              })}
+                  );
+                })}
+              </tbody>
             </table>
             <br />
 

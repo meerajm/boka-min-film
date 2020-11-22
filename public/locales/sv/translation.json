@@ -3,8 +3,8 @@
     "description": {
         "part1": "Byt språk mellan engelska och svenska med knapparna ovan."
     },
-    "header":{
-        "selectLang":"Välj språk: "
+    "header": {
+        "selectLang": "Välj språk: "
     },
     "mainPage": {
         "heading": "Aktuellt på bio",
@@ -36,19 +36,19 @@
         "screen": "Salong",
         "movieTimeHeader": "Filmtid",
         "screenNoHeader": "Salongnummer:",
-        "displayMsg":"Tyvärr, den här filmen spelas inte för valt datum och film."
+        "displayMsg": "Tyvärr, den här filmen spelas inte för valt datum och film."
     },
     "seatSelect": {
         "selectText": "Välj antal platser: ",
         "priceText": "*120 kr per plats",
-        "maxSeat":"*Du kan välja maximalt 5 platser",
+        "maxSeat": "*Du kan välja maximalt 5 platser",
         "screen": "BIODUK",
         "selectedSeat": "Vald säte",
         "reservedSeat": "Reserverat säte",
         "emptySeat": "Tom plats",
         "confirmSelect": "Bekräfta valet",
         "resetSeat": "Återställ platser",
-        "toPay":"Att betala: "
+        "toPay": "Att betala: "
     },
     "userDetails": {
         "fullName": "Namn: ",
@@ -59,28 +59,29 @@
         "placeHolderEmail": "Din email...",
         "placeHolderPhone": "Ditt telefonnummer...",
         "payment": "Bekräfta bokningen och gå till betalning",
-        "nameValidation":"* Ange ett namn",
-        "emailValidation":"* Ange ett giltigt e-postmeddelande",
-        "phoneValidation":"* Ange ett giltigt telefonnummer"
+        "nameValidation": "* Ange ett namn",
+        "emailValidation": "* Ange ett giltigt e-postmeddelande",
+        "phoneValidation": "* Ange ett giltigt telefonnummer"
     },
     "paymentPage": {
         "total": "Total: "
     },
     "ticketDetails": {
         "movieName": "Filmnamn: ",
-        "cinemaName":"Biografnamn: ",
+        "cinemaName": "Biografnamn: ",
         "showDetails": "Filmdetaljer: ",
         "date": "Datum: ",
         "time": "Tid: ",
-        "paymentStatus":"Betalningsstatus: ",
-        "paymentSuccess":"Framgångsrik",
-        "paymentFailed":"Fel",
-        "ok":"OK"
+        "paymentStatus": "Betalningsstatus: ",
+        "paymentSuccess": "Framgångsrik",
+        "paymentFailed": "Fel",
+        "ok": "OK"
     },
     "thankyou": {
         "firstMsg": "Yipeeee !!! Din bokning är bekräftad !!!",
         "secondMsgPart1": "Tack ",
         "secondMsgPart2": " för bokning hos oss. Vi hoppas att vi ses snart igen.",
-        "thirdMsg": "En kopia av din biljett har skickats till din inkorg."
+        "thirdMsg": "En kopia av din biljett har skickats till din inkorg.",
+        "bookAgain": "Boka en annan biljett"
     }
 }

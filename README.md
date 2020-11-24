@@ -1,42 +1,47 @@
-# Getting Started with Create React App
+# BokaMinFilm frontend
+A movie ticket booking app built using the MERN stack.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Tech
 
-## Available Scripts
+we are useing a number of open source tools:
 
-In the project directory, you can run:
+- [React] - A JavaScript library for building user interfaces
+- [Axios] - Promise based HTTP client for the browser and node.js
 
-### `npm start`
+### Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Install all dependencies and start the project.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```sh
+$ cd frontend
+$ npm install
+$ npm start
+```
 
-### `npm test`
+### Setup
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Eslint must be installed globally: `npm install -g eslint`
 
-### `npm run build`
+env variables are only available in node environment and not in the browser and we can access to them via `process.env.[VARIABLE_NAME]`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+A `.env.local` file is created at the root directory of the application. Just add the variables to it.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+REACT_APP_BASE_URL="http://localhost:5000"
+REACT_APP_EMAILJS_USER_ID="YOUR_EMAILJS_USER_ID"
+REACT_APP_STRIPE_KEY="YOUR_STRIPE_KEY"
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Since we're using create-react-app, It does some tricks for you and simulates the same behavior inside the browser, only if you put the REACT*APP* prefix before your env variables.
+
+Note:
+
+> You must create custom environment variables beginning with REACT*APP*. Any other variables except NODE_ENV will be ignored to avoid accidentally exposing a private key on the machine that could have the same name. Changing any environment variables will require you to restart the development server if it is running.
 
 ###
+Ticket details sent to user through emailjs.
+
+### Special thanks to-
 Icons made by <a href="https://www.flaticon.com/authors/srip" title="srip">srip</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
 
-Icons made by <a href="https://www.flaticon.com/authors/srip" title="srip">srip</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
-
-Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
-
-Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
-
-Play Button
 Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>

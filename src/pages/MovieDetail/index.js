@@ -20,10 +20,12 @@ const MovieDetails = () => {
   };
 
   return (
-    <div>
+    <div data-testid="movie-details">
       <figure className="poster">
         <img src={selectedMovie.poster} alt={selectedMovie.title} />
-        <figcaption className="movie-name">{selectedMovie.title}</figcaption>
+        <figcaption data-testid="movie-title" className="movie-name">
+          {selectedMovie.title}
+        </figcaption>
         <figcaption className="text-large-white bold">
           {t("movieDetail.language")}: &nbsp;
           <span className="movie-info">{selectedMovie.language}</span>

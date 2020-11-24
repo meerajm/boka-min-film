@@ -38,9 +38,9 @@ const Main = () => {
   const { movies, errorMessage, loading } = state;
 
   return (
-    <div className="wrapper">
+    <div className="wrapper" data-testid="main-container">
       <h2>
-        <strong>{t("mainPage.heading")}</strong>
+        <strong data-testid="heading">{t("mainPage.heading")}</strong>
       </h2>
       <div className="cards">
         {loading && <span>{t("mainPage.loading")}</span>}

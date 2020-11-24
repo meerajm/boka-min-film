@@ -6,7 +6,7 @@ const Header = () => {
   const { i18n } = useTranslation();
   const { t } = useTranslation();
   return (
-    <div className="header-container">
+    <div className="header-container" data-testid="header">
       <div className="header-row">
         <div className="header-title">
           <a href="/main" className="menu">

@@ -8,7 +8,7 @@
 }
 select {
   grid-column: 0;
-  background-color:gray;
+  background-color: gray;
   color: white;
   padding: 1em;
   cursor: pointer;
@@ -16,4 +16,11 @@ select {
 .book-ticket-container {
   color: white;
   text-align: center;
+}
+.error-msg {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 3px 3px 3px 3px;
+  color: #d8000c;
+  background-color: #ffbaba;
 }

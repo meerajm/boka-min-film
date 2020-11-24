@@ -29,7 +29,8 @@
             "thu": "torsdag",
             "fri": "fredag",
             "sat": "lördag"
-        }
+        },
+        "errorMsg":"Välj en biograf."
     },
     "movieTiming": {
         "bookNow": "Boka nu",

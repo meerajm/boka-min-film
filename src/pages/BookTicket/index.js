@@ -1,8 +1,6 @@
 import React, { useState, useContext } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "@reach/router";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import AppContext from "../../store/context";
 import DisplayCinemaSelection from "../../components/CinemaNames";
 import "./index.css";
@@ -11,6 +9,7 @@ const BookTicket = () => {
   const { t } = useTranslation();
   const { state, dispatch } = useContext(AppContext);
   const { selectedCinema } = state;
+  const [showErrorMsg, setShowErrorMsg] = useState(false);
   const navigate = useNavigate();
   const days = [
     "söndag",
@@ -72,7 +71,7 @@ const BookTicket = () => {
       });
       navigate("./confirm");
     } else {
-      toast("Please select a cinema", { type: "error" });
+      setShowErrorMsg(true);
     }
   };
   return (
@@ -95,6 +94,9 @@ const BookTicket = () => {
         <button type="button" onClick={goToNextPage}>
           {t("bookTicket.next")}
         </button>
+      )}
+      {showErrorMsg && (
+        <div className="error-msg">{t("bookTicket.errorMsg")}</div>
       )}
     </div>
   );

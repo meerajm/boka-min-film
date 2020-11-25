@@ -17,7 +17,7 @@ async function renderWrapper() {
   return component;
 }
 
-describe.only("Movie details page testing", () => {
+describe("Movie details page testing", () => {
   test("should render Movie details page", async () => {
     const { getByTestId } = await renderWrapper();
     const movieDetails = await waitFor(() => getByTestId("movie-details"));

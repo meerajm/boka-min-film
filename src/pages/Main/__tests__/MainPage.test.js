@@ -1,8 +1,8 @@
 import React from "react";
 import { render, waitFor, act } from "@testing-library/react";
-import Main from "../index";
+import Main from "..";
 import mockedAxios from "../../../__mocks__/axios";
-import { getTestStore, WithProvider } from "../../../mockTestData/data";
+import { WithProvider } from "../../../mockTestData/data";
 
 async function renderWrapper() {
   let component;

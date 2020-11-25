@@ -13,14 +13,15 @@ const Movie = ({ movie }) => {
     navigate("./details");
   };
   return (
-    <figure className="card">
+    <figure className="card" data-testid="movie-card">
       <img
+        data-testid="movie-poster"
         src={movie.poster}
         alt={`The movie titled: ${movie.title}`}
         onClick={handleSelectedMovie}
         onKeyDown={handleSelectedMovie}
       />
-      <figcaption>{movie.title}</figcaption>
+      <figcaption data-testid="movie-title">{movie.title}</figcaption>
     </figure>
   );
 };

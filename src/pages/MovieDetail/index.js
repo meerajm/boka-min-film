@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { useTranslation } from "react-i18next";
 import Iframe from "react-iframe";
-import { useNavigate } from "@reach/router";
+import { navigate } from "@reach/router";
 import AppContext from "../../store/context";
 import "./index.css";
 
@@ -9,7 +9,6 @@ const MovieDetails = () => {
   const { t } = useTranslation();
   const { state } = useContext(AppContext);
   const { selectedMovie } = state;
-  const navigate = useNavigate();
   const [play, setPlay] = useState(false);
   const trailer = play
     ? `${selectedMovie.trailer}?modestbranding=1&autoplay=1`
@@ -48,7 +47,7 @@ const MovieDetails = () => {
             {selectedMovie.description}
           </span>
         </figcaption>
-        <button type="button" onClick={handleTicket}>
+        <button type="button" onClick={handleTicket} data-testid="tickets-btn">
           {t("movieDetail.tickets")}
         </button>
       </figure>

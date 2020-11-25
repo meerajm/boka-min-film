@@ -1,6 +1,7 @@
 import React from "react";
 import MovieDetails from "..";
-import { render, act, waitFor } from "@testing-library/react";
+import * as router from "@reach/router";
+import { render, act, waitFor, fireEvent } from "@testing-library/react";
 import { getTestStore, WithProvider } from "../../../mockTestData/data";
 
 async function renderWrapper() {
@@ -16,7 +17,7 @@ async function renderWrapper() {
   return component;
 }
 
-describe("Movie details page testing", () => {
+describe.only("Movie details page testing", () => {
   test("should render Movie details page", async () => {
     const { getByTestId } = await renderWrapper();
     const movieDetails = await waitFor(() => getByTestId("movie-details"));
@@ -58,5 +59,15 @@ describe("Movie details page testing", () => {
     const { state } = getTestStore();
     const moviePoster = await waitFor(() => getByTestId("movie-poster"));
     expect(moviePoster).toHaveAttribute("src", `${state.selectedMovie.poster}`);
+  });
+
+  test("Renders tickets button", async () => {
+    const { getByTestId } = await renderWrapper();
+    const ticketsBtn = await waitFor(() => getByTestId("tickets-btn"));
+    expect(ticketsBtn).toBeInTheDocument();
+    const navigateSpy = jest.spyOn(router, "navigate");
+    fireEvent.click(ticketsBtn);
+    await waitFor(() => expect(navigateSpy).toHaveBeenCalledTimes(1));
+    expect(navigateSpy).toHaveBeenCalledWith("./tickets");
   });
 });

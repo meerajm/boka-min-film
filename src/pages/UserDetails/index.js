@@ -26,9 +26,6 @@ const UserDetailsComponent = () => {
 
   const validateForm = (e) => {
     e.preventDefault();
-    console.log("name: ", name);
-    console.log("email: ", email);
-    console.log("phone: ", phoneNo);
     if (name && email && phoneNo) {
       const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       if (!emailRegex.test(email.toLowerCase())) {
@@ -45,7 +42,6 @@ const UserDetailsComponent = () => {
     if (!name) {
       setNameValidator(true);
     } else {
-      console.log("disable name");
       setNameValidator(false);
     }
     if (!email) {

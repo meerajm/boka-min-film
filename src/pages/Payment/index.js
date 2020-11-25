@@ -53,13 +53,12 @@ const Payment = () => {
       ...userDetails,
       ticketDetails: { ...tickets, transactionSuccess: payment },
     });
-    const resForAddUser = await axios.post(`${USER_API_URL}`, newUser, {
+    await axios.post(`${USER_API_URL}`, newUser, {
       headers: {
         "content-type": "application/json",
       },
     });
-    console.log(resForAddUser);
-    const resForUpdateSeats = await axios.patch(
+    await axios.patch(
       `${CINEMA_API_URL}/${selectedCinema}/${selectedShow.id}`,
       tickets,
       {
@@ -68,7 +67,6 @@ const Payment = () => {
         },
       }
     );
-    console.log(resForUpdateSeats);
     setTimeout(() => {
       navigate("./ticket-details");
     }, 2000);

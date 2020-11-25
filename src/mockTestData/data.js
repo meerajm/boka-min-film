@@ -25,6 +25,16 @@ export const getTestStore = () => {
           cinemaName: "INOX",
         },
       ],
+      selectedMovie: {
+        title: "Welcome",
+        poster:
+          "https://m.media-amazon.com/images/M/MV5BZjcyOTViMzUtOWQ5Yy00ZTVmLWJmYzctN2U2OGVlN2ZjNTA0XkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SX300.jpg",
+        language: "Hindi",
+        genre: "Komedi",
+        description:
+          "Två skurkar möter Rajeev, som tillhör en respektabel familj, och vill fixa sin systers bröllop med honom. Men när Rajeevs farbror vägrar att matcha, inträffar en serie roliga situationer.",
+        trailer: "https://www.youtube.com/embed/03-KVRmd3xo",
+      },
     },
   };
 };

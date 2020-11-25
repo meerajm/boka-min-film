@@ -22,21 +22,31 @@ const MovieDetails = () => {
   return (
     <div data-testid="movie-details">
       <figure className="poster">
-        <img src={selectedMovie.poster} alt={selectedMovie.title} />
+        <img
+          src={selectedMovie.poster}
+          alt={selectedMovie.title}
+          data-testid="movie-poster"
+        />
         <figcaption data-testid="movie-title" className="movie-name">
           {selectedMovie.title}
         </figcaption>
         <figcaption className="text-large-white bold">
           {t("movieDetail.language")}: &nbsp;
-          <span className="movie-info">{selectedMovie.language}</span>
+          <span className="movie-info" data-testid="movie-language">
+            {selectedMovie.language}
+          </span>
         </figcaption>
         <figcaption className="text-large-white bold">
           {t("movieDetail.genre")}: &nbsp;
-          <span className="movie-info">{selectedMovie.genre}</span>
+          <span className="movie-info" data-testid="movie-genre">
+            {selectedMovie.genre}
+          </span>
         </figcaption>
         <figcaption className="text-large-white">
           {t("movieDetail.description")}: &nbsp;
-          <span className="movie-info">{selectedMovie.description}</span>
+          <span className="movie-info" data-testid="movie-description">
+            {selectedMovie.description}
+          </span>
         </figcaption>
         <button type="button" onClick={handleTicket}>
           {t("movieDetail.tickets")}

@@ -75,10 +75,15 @@ const BookTicket = () => {
     }
   };
   return (
-    <div className="book-ticket-container">
+    <div className="book-ticket-container" data-testid="book-ticket">
       <h1>{t("bookTicket.bookTickets")}</h1>
       <div className="select-container">
-        <select id="choose-date" value={selectedDate} onChange={handleChange}>
+        <select
+          id="choose-date"
+          value={selectedDate}
+          onChange={handleChange}
+          data-testid="date-select"
+        >
           <option key="0" value="">
             {t("bookTicket.selectDate")}
           </option>

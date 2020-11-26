@@ -89,7 +89,11 @@ const Payment = () => {
           token={handleToken}
           amount={price}
           name={name}
-        />
+        >
+          <button type="submit" className="stripe-button-el">
+            <span>{t("paymentPage.payWithCard")}</span>
+          </button>
+        </StripeCheckout>
       </div>
     </div>
   );

@@ -65,7 +65,8 @@
         "phoneValidation": "* कृपया कोई मान्य फ़ोन नंबर दर्ज करें"
     },
     "paymentPage": {
-        "total": "संपूर्ण: "
+        "total": "संपूर्ण: ",
+        "payWithCard":"कार्ड से भुगतान करें"
     },
     "ticketDetails": {
         "movieName": "मूवी का नाम: ",

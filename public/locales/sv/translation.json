@@ -65,7 +65,8 @@
         "phoneValidation": "* Ange ett giltigt telefonnummer"
     },
     "paymentPage": {
-        "total": "Total: "
+        "total": "Total: ",
+        "payWithCard":"Betala med kort"
     },
     "ticketDetails": {
         "movieName": "Filmnamn: ",

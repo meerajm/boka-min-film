@@ -64,16 +64,17 @@ const MovieTimings = () => {
               </tr>
             </thead>
             <tbody>
-              {cinemas.map((data) => (
+              {cinemas.map((data, i) => (
                 <tr key={cinemas.id}>
-                  <td>{data.startTime}</td>
-                  <td>
+                  <td key={`start_id${i + 1}`}>{data.startTime}</td>
+                  <td key={`screen_id${i + 1}`}>
                     {t("movieTiming.screen")}
                     &nbsp;
                     {data.screen}
                   </td>
-                  <td>
+                  <td key={`book_id${i + 1}`}>
                     <button
+                      key={`book_btn_id${i + 1}`}
                       type="button"
                       value={data.id}
                       className="book-btn"

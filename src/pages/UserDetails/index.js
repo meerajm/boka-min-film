@@ -15,14 +15,15 @@ const UserDetailsComponent = () => {
   const [emailValidator, setEmailValidator] = useState(false);
   const [phoneNo, setPhoneNo] = useState("");
   const [phoneNoValidator, setPhoneNoValidator] = useState(false);
+  const [msg, setMsg] = useState("");
   const navigate = useNavigate();
   const userID = process.env.REACT_APP_EMAILJS_USER_ID;
-  const showDetails = `Show details:
-  Movie: ${state.selectedMovie.title},
-  Date: ${tickets.date},
-  Time: ${tickets.time},
-  Quantity: ${tickets.quantity},
-  SeatNo: ${tickets.seatNo}`;
+  const showDetails = `${t("ticketDetails.showDetails")}:
+  ${t("ticketDetails.movieName")}: ${state.selectedMovie.title},
+  ${t("ticketDetails.date")}: ${tickets.date},
+  ${t("ticketDetails.time")}: ${tickets.time},
+  ${t("userDetails.quantity")}: ${tickets.quantity},
+  ${t("userDetails.seatNo")}: ${tickets.seatNo}`;
 
   const validateForm = (e) => {
     e.preventDefault();
@@ -71,14 +72,15 @@ const UserDetailsComponent = () => {
       });
       emailjs.sendForm("gmail", "template_qzheows", e.target, userID).then(
         (result) => {
-          console.log(result.text);
+          if (result.text === "OK") setMsg(`${t("userDetails.msg")}`);
         },
         (error) => {
-          console.log(error.text);
+          setMsg(`${t("userDetails.errorMsg")}${error.text}`);
         }
       );
-
-      navigate("./payment");
+      setTimeout(() => {
+        navigate("./payment");
+      }, 10000);
     }
   };
 
@@ -99,74 +101,77 @@ const UserDetailsComponent = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label>
-          {t("userDetails.fullName")}
-          <input
-            type="text"
-            value={name}
-            name="name"
-            placeholder={t("userDetails.placeHolderName")}
-            onChange={handleName}
-          />
-
-          {nameValidator && (
-            <label className="validation">
-              {t("userDetails.nameValidation")}
-            </label>
-          )}
-        </label>
-      </div>
-      <div>
-        <label>
-          {t("userDetails.email")}
-          <input
-            type="text"
-            value={email}
-            name="email"
-            placeholder={t("userDetails.placeHolderEmail")}
-            onChange={handleEmail}
-          />
-          {emailValidator && (
-            <label className="validation">
-              {t("userDetails.emailValidation")}
-            </label>
-          )}
-        </label>
-      </div>
-      <div>
-        <label>
-          {t("userDetails.phone")}
-          <input
-            type="text"
-            value={phoneNo}
-            placeholder={t("userDetails.placeHolderPhone")}
-            onChange={handlePhoneNo}
-          />
-          {phoneNoValidator && (
-            <label className="validation">
-              {t("userDetails.phoneValidation")}
-            </label>
-          )}
-        </label>
+    <>
+      {msg && <div className="info-msg">{msg}</div>}
+      <form onSubmit={handleSubmit}>
         <div>
           <label>
-            {t("userDetails.showDetails")}
-            <textarea
+            {t("userDetails.fullName")}
+            <input
               type="text"
-              rows="6"
-              cols="30"
-              value={showDetails}
-              name="details"
+              value={name}
+              name="name"
+              placeholder={t("userDetails.placeHolderName")}
+              onChange={handleName}
             />
+
+            {nameValidator && (
+              <label className="validation">
+                {t("userDetails.nameValidation")}
+              </label>
+            )}
           </label>
         </div>
-      </div>
-      <div>
-        <input type="submit" value={t("userDetails.payment")} />
-      </div>
-    </form>
+        <div>
+          <label>
+            {t("userDetails.email")}
+            <input
+              type="text"
+              value={email}
+              name="email"
+              placeholder={t("userDetails.placeHolderEmail")}
+              onChange={handleEmail}
+            />
+            {emailValidator && (
+              <label className="validation">
+                {t("userDetails.emailValidation")}
+              </label>
+            )}
+          </label>
+        </div>
+        <div>
+          <label>
+            {t("userDetails.phone")}
+            <input
+              type="text"
+              value={phoneNo}
+              placeholder={t("userDetails.placeHolderPhone")}
+              onChange={handlePhoneNo}
+            />
+            {phoneNoValidator && (
+              <label className="validation">
+                {t("userDetails.phoneValidation")}
+              </label>
+            )}
+          </label>
+          <div>
+            <label>
+              {t("userDetails.showDetails")}
+              <textarea
+                type="text"
+                rows="6"
+                cols="30"
+                value={showDetails}
+                name="details"
+              />
+            </label>
+          </div>
+        </div>
+        <div>
+          <input type="submit" value={t("userDetails.payment")} />
+        </div>
+      </form>
+    </>
   );
 };
 export default UserDetailsComponent;

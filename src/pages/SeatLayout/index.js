@@ -145,14 +145,14 @@ const SeatLayout = () => {
                 <tr>
                   <td />
                   {rows.map((row) => {
-                    return <td>{row}</td>;
+                    return <td key={row}>{row}</td>;
                   })}
                 </tr>
                 {columns.map((column) => {
                   return (
                     <tr>
                       <tr>
-                        <td>{column}</td>
+                        <td key={column}>{column}</td>
                       </tr>
                       {rows.map((row) => {
                         return (

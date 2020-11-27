@@ -30,7 +30,7 @@
             "fri": "fredag",
             "sat": "lördag"
         },
-        "errorMsg":"Välj en biograf."
+        "errorMsg": "Välj en biograf."
     },
     "movieTiming": {
         "bookNow": "Boka nu",
@@ -62,11 +62,15 @@
         "payment": "Bekräfta bokningen och gå till betalning",
         "nameValidation": "* Ange ett namn",
         "emailValidation": "* Ange ett giltigt e-postmeddelande",
-        "phoneValidation": "* Ange ett giltigt telefonnummer"
+        "phoneValidation": "* Ange ett giltigt telefonnummer",
+        "quantity": "Antal biljetter",
+        "seatNo": "Sitsnummer",
+        "msg":"Kontrollera din inkorg för biljettinformation",
+        "errorMsg":"Det uppstod ett fel när du försökte skicka ett e-postmeddelande: "
     },
     "paymentPage": {
         "total": "Total: ",
-        "payWithCard":"Betala med kort"
+        "payWithCard": "Betala med kort"
     },
     "ticketDetails": {
         "movieName": "Filmnamn: ",

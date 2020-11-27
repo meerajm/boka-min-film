@@ -48,3 +48,11 @@ input[type="submit"]:hover {
   background-color: gray;
   border: 2px solid maroon;
 }
+.info-msg {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 3px 3px 3px 3px;
+  color: blue;
+  background-color: cornflowerblue;
+  font-size: 2em;
+}

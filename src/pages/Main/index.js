@@ -42,20 +42,20 @@ const Main = () => {
 
   const { movies, errorMessage, loading, searchResult } = state;
   const [movieName, setName] = useState("");
+  const [resultMsg, setResultMsg] = useState(false);
   const search = () => {
-    console.log(movies);
     let searchMovie = [];
     searchMovie = movies.filter((movie) =>
       movie.title.toLowerCase().includes(movieName.toLowerCase())
     );
-    if (!searchMovie) {
-      console.log("empty");
+    dispatch({
+      type: "setSearchResult",
+      data: searchMovie,
+    });
+    if (searchMovie.length === 0) {
+      setResultMsg(true);
     } else {
-      console.log("movie found:", searchMovie);
-      dispatch({
-        type: "setSearchResult",
-        data: searchMovie,
-      });
+      setResultMsg(false);
     }
   };
   return (
@@ -75,6 +75,7 @@ const Main = () => {
       <h2>
         <strong data-testid="heading">{t("mainPage.heading")}</strong>
       </h2>
+      {resultMsg && <h3 className="text-white">{t("mainPage.msg")}</h3>}
       <div className="cards">
         {loading && <span>{t("mainPage.loading")}</span>}
 

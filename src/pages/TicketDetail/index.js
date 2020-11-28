@@ -14,7 +14,7 @@ const TicketDetail = () => {
     : "paymentFailed";
   return (
     <div className="ticket-details-container">
-      <h1 className="text-white">Ticket details</h1>
+      <h1 className="text-white">{t("ticketDetails.ticketDetail")}</h1>
       <table className="ticket-details">
         <tbody>
           <tr>

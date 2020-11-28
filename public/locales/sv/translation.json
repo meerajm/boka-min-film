@@ -8,7 +8,8 @@
     },
     "mainPage": {
         "heading": "Aktuellt på bio",
-        "loading": "laddar..."
+        "loading": "laddar...",
+        "msg": "Inga sökresultat"
     },
     "movieDetail": {
         "language": "Språk",
@@ -65,8 +66,8 @@
         "phoneValidation": "* Ange ett giltigt telefonnummer",
         "quantity": "Antal biljetter",
         "seatNo": "Sitsnummer",
-        "msg":"Kontrollera din inkorg för biljettinformation",
-        "errorMsg":"Det uppstod ett fel när du försökte skicka ett e-postmeddelande: "
+        "msg": "Kontrollera din inkorg för biljettinformation",
+        "errorMsg": "Det uppstod ett fel när du försökte skicka ett e-postmeddelande: "
     },
     "paymentPage": {
         "total": "Total: ",
@@ -81,7 +82,8 @@
         "paymentStatus": "Betalningsstatus: ",
         "paymentSuccess": "Framgångsrik",
         "paymentFailed": "Fel",
-        "ok": "OK"
+        "ok": "OK",
+        "ticketDetail": "Biljettinformation"
     },
     "thankyou": {
         "firstMsg": "Yipeeee !!! Din bokning är bekräftad !!!",

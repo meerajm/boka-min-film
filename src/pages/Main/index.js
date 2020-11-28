@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useTranslation } from "react-i18next";
 import axios from "axios";
 import AppContext from "../../store/context";
@@ -11,12 +11,17 @@ const Main = () => {
   const baseUrl = process.env.REACT_APP_BASE_URL;
   const MOVIE_API_URL = `${baseUrl}api/v1/movies`;
   const CINEMA_API_URL = `${baseUrl}api/v1/cinemas/all`;
+  let allMovies = [];
   useEffect(() => {
     async function fetchMovies() {
       const response = await axios.get(`${MOVIE_API_URL}`);
-      const allMovies = await response.data;
+      allMovies = await response.data;
       dispatch({
         type: "setMovies",
+        data: allMovies,
+      });
+      dispatch({
+        type: "setSearchResult",
         data: allMovies,
       });
     }
@@ -35,10 +40,38 @@ const Main = () => {
     fetchCinemaNames();
   }, []);
 
-  const { movies, errorMessage, loading } = state;
-
+  const { movies, errorMessage, loading, searchResult } = state;
+  const [movieName, setName] = useState("");
+  const search = () => {
+    console.log(movies);
+    let searchMovie = [];
+    searchMovie = movies.filter((movie) =>
+      movie.title.toLowerCase().includes(movieName.toLowerCase())
+    );
+    if (!searchMovie) {
+      console.log("empty");
+    } else {
+      console.log("movie found:", searchMovie);
+      dispatch({
+        type: "setSearchResult",
+        data: searchMovie,
+      });
+    }
+  };
   return (
     <div className="wrapper" data-testid="main-container">
+      <form className="search" onSubmit={(e) => e.preventDefault()}>
+        <input
+          type="text"
+          placeholder="Search for movies"
+          value={movieName}
+          onBlur={(e) => setName(e.target.value)}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <button type="button" onClick={search}>
+          Search
+        </button>
+      </form>
       <h2>
         <strong data-testid="heading">{t("mainPage.heading")}</strong>
       </h2>
@@ -47,8 +80,8 @@ const Main = () => {
 
         {errorMessage && <span>{errorMessage}</span>}
 
-        {movies &&
-          movies.map((movie) => <Movie key={movie._id} movie={movie} />)}
+        {searchResult &&
+          searchResult.map((movie) => <Movie key={movie._id} movie={movie} />)}
       </div>
     </div>
   );

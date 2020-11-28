@@ -16,7 +16,7 @@ body {
   font-weight: bold;
 }
 .wrapper {
-  padding: 15px;  
+  padding: 15px;
 }
 h2 {
   padding: 10px;
@@ -108,16 +108,25 @@ h2:after {
 }
 button {
   background-color: maroon;
-  margin:10px;
+  margin: 10px;
   color: white;
   text-align: center;
   width: 8em;
   height: auto;
   font-size: 20px;
+  font-family: "Alegreya";
   border-radius: 10px;
   cursor: pointer;
   border: none;
 }
 button:hover {
-  background-color:gray;
+  background-color: gray;
+}
+.search {
+  padding: 0em;
+  margin: 0em;
+  margin-top: 0em;
+  background-color: transparent;
+  text-align: center;
+  width: auto;
 }

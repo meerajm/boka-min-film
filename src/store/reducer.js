@@ -7,6 +7,11 @@ const reducer = (state, action) => {
         movies: action.data,
         errorMessage: null,
       };
+    case "setSearchResult":
+      return {
+        ...state,
+        searchResult: action.data,
+      };
     case "setSelectedMovie":
       return {
         ...state,

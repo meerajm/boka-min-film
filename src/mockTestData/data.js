@@ -6,7 +6,7 @@ export const getTestStore = () => {
   return {
     dispatch: () => {},
     state: {
-      movies: [
+      searchResult: [
         {
           _id: "123123123",
           title: "Avengers: Infinity War",

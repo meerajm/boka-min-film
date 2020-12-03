@@ -63,13 +63,13 @@ const Main = () => {
       <form className="search" onSubmit={(e) => e.preventDefault()}>
         <input
           type="text"
-          placeholder="Search for movies"
+          placeholder={t("mainPage.searchMovie")}
           value={movieName}
           onBlur={(e) => setName(e.target.value)}
           onChange={(e) => setName(e.target.value)}
         />
         <button type="button" onClick={search}>
-          Search
+          {t("mainPage.search")}
         </button>
       </form>
       <h2>

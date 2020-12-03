@@ -52,6 +52,7 @@ input[type="checkbox"]:checked:before {
 }
 .counter {
   padding: 10px;
+  color: black;
   font-size: x-large;
   font-weight: bold;
   border-radius: 4%;

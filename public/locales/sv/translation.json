@@ -9,7 +9,9 @@
     "mainPage": {
         "heading": "Aktuellt på bio",
         "loading": "laddar...",
-        "msg": "Inga sökresultat"
+        "msg": "Inga sökresultat",
+        "search": "Sök",
+        "searchMovie": "Sök efter filmer"
     },
     "movieDetail": {
         "language": "Språk",

@@ -1,5 +1,4 @@
 import React, { useEffect, useReducer } from "react";
-import { Trans, useTranslation } from "react-i18next";
 import { Router } from "@reach/router";
 import Main from "./pages/Main";
 import MovieDetail from "./pages/MovieDetail";
@@ -16,7 +15,6 @@ import AppContext from "./store/context";
 import store from "./store";
 
 function App() {
-  const { t } = useTranslation();
   const localState = JSON.parse(localStorage.getItem("allContent"));
   const [state, dispatch] = useReducer(
     store.reducer,
@@ -30,15 +28,9 @@ function App() {
   return (
     <>
       <Header />
-      <div>
-        <Trans i18nKey="title" color="white">
-          Hello and welcome to BokaMinFilm
-        </Trans>
-        <div color="white">{t("description.part1")}</div>
-      </div>
       <AppContext.Provider value={{ state, dispatch }}>
         <Router>
-          <Main path="main" />
+          <Main path="/" />
           <MovieDetail path="details" />
           <BookTicket path="tickets" />
           <SeatLayout path="seats" />

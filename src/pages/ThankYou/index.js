@@ -24,7 +24,7 @@ const ThankYou = () => {
         type="button"
         onClick={() => {
           localStorage.removeItem("allContent");
-          navigate("./main");
+          navigate("./");
         }}
       >
         {t("thankyou.bookAgain")}

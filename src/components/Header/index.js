@@ -9,7 +9,7 @@ const Header = () => {
     <div className="header-container" data-testid="header">
       <div className="header-row">
         <div className="header-title">
-          <a href="/main" className="menu">
+          <a href="/" className="menu">
             <h1 className="title-text">BokaMinFilm</h1>
           </a>
         </div>

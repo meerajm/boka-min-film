@@ -18,10 +18,10 @@ const UserDetailsComponent = () => {
   const [msg, setMsg] = useState("");
   const navigate = useNavigate();
   const userID = process.env.REACT_APP_EMAILJS_USER_ID;
-  const showDetails = `${t("ticketDetails.showDetails")}:
-  ${t("ticketDetails.movieName")}: ${state.selectedMovie.title},
-  ${t("ticketDetails.date")}: ${tickets.date},
-  ${t("ticketDetails.time")}: ${tickets.time},
+  const showDetails = `${t("ticketDetails.showDetails")}
+  ${t("ticketDetails.movieName")}${state.selectedMovie.title},
+  ${t("ticketDetails.date")}${tickets.date},
+  ${t("ticketDetails.time")}${tickets.time},
   ${t("userDetails.quantity")}: ${tickets.quantity},
   ${t("userDetails.seatNo")}: ${tickets.seatNo}`;
 

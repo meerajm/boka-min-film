@@ -23,13 +23,4 @@ describe("Book ticket page testing", () => {
     const bookTicket = await waitFor(() => getByTestId("book-ticket"));
     expect(bookTicket).toBeInTheDocument();
   });
-
-  test.skip("selected value is updated correctly", async () => {
-    const { getByTestId } = await renderWrapper();
-    let d = "10/10/2020 - onsdag";
-    const selectedDate = getByTestId("date-select");
-    console.log(selectedDate);
-    fireEvent.change(selectedDate, { target: { value: d } });
-    expect(selectedDate.value).toBe(d);
-  });
 });

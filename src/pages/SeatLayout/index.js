@@ -158,6 +158,8 @@ const SeatLayout = () => {
                         return (
                           <td>
                             {checkBooked(`${column}${row}`) ? (
+                              <div className="seat-container" />
+                            ) : (
                               <input
                                 type="checkbox"
                                 id={`${column}${row}`}
@@ -166,8 +168,6 @@ const SeatLayout = () => {
                                 onClick={handleSelect}
                                 disabled={disableSelection}
                               />
-                            ) : (
-                              <div className="seat-container" />
                             )}
                           </td>
                         );

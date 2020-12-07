@@ -157,19 +157,20 @@ const SeatLayout = () => {
                       {rows.map((row) => {
                         return (
                           <td>
-                            <input
-                              type="checkbox"
-                              id={`${column}${row}`}
-                              key={`${column}${row}`}
-                              value={`${column}${row}`}
-                              onClick={handleSelect}
-                              disabled={disableSelection}
-                              hidden={checkBooked(`${column}${row}`)}
-                            />
-                            <div
-                              className="seat-container"
-                              hidden={!checkBooked(`${column}${row}`)}
-                            />
+                            {checkBooked(`${column}${row}`) ? (
+                              <input
+                                type="checkbox"
+                                id={`${column}${row}`}
+                                key={`${column}${row}`}
+                                value={`${column}${row}`}
+                                onClick={handleSelect}
+                                disabled={disableSelection}
+                              />
+                            ) : (
+                              <div
+                                className="seat-container"
+                              />
+                            )}
                           </td>
                         );
                       })}

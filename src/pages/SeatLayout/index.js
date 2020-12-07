@@ -167,9 +167,7 @@ const SeatLayout = () => {
                                 disabled={disableSelection}
                               />
                             ) : (
-                              <div
-                                className="seat-container"
-                              />
+                              <div className="seat-container" />
                             )}
                           </td>
                         );

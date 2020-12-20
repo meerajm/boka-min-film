@@ -5,6 +5,8 @@
 # frontend
 A movie ticket booking app built using the MERN stack.
 
+https://bokaminfilm.netlify.app/
+
 ### Tech
 
 we are useing a number of open source tools:

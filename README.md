@@ -9,10 +9,11 @@ https://bokaminfilm.netlify.app/
 
 ### Tech
 
-we are useing a number of open source tools:
-
-- [React] - A JavaScript library for building user interfaces
-- [Axios] - Promise based HTTP client for the browser and node.js
+- [React] - A JavaScript library for building user interfaces.
+- [Axios] - Promise based HTTP client for the browser and node.js.
+- [Stripe] - A complete payment solution
+- [i18Next] - An internationalization-framework.
+- [EmailJS] - Send email from Javascript.
 
 ### Installation
 
@@ -38,11 +39,11 @@ REACT_APP_EMAILJS_USER_ID="YOUR_EMAILJS_USER_ID"
 REACT_APP_STRIPE_KEY="YOUR_STRIPE_KEY"
 ```
 
-Since we're using create-react-app, It does some tricks for you and simulates the same behavior inside the browser, only if you put the REACT*APP* prefix before your env variables.
+Since we're using create-react-app, It does some tricks for you and simulates the same behavior inside the browser, only if you put the REACT_APP prefix before your env variables.
 
 Note:
 
-> You must create custom environment variables beginning with REACT*APP*. Any other variables except NODE_ENV will be ignored to avoid accidentally exposing a private key on the machine that could have the same name. Changing any environment variables will require you to restart the development server if it is running.
+> You must create custom environment variables beginning with REACT_APP. Any other variables except NODE_ENV will be ignored to avoid accidentally exposing a private key on the machine that could have the same name. Changing any environment variables will require you to restart the development server if it is running.
 
 ###
 Ticket details sent to user through emailjs.

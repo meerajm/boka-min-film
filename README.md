@@ -1,7 +1,7 @@
 # BokaMinFilm
 
 [![Actions Status](https://github.com/meerajm/boka-min-film/workflows/BokaMinFilm%20Frontend/badge.svg)](https://github.com/meerajm/boka-min-film/actions)
-[![Actions Status](https://github.com/meerajm/boka-min-film/workflows/Run%20/Lint/badge.svg)](https://github.com/meerajm/boka-min-film/actions)
+[![Actions Status](https://github.com/meerajm/boka-min-film/workflows/Run%20Lint/badge.svg)](https://github.com/meerajm/boka-min-film/actions)
 
 # frontend
 A movie ticket booking app built using the MERN stack.
